@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="DL," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="深度学习工程师由 deeplearning.ai 出品，网易引进的正版授权中文版深度学习工程师微专业课程，让你在了解丰富的人工智能应用案例的同时，学会在实践中搭建出最先进的神经网络模型，训练出属于你自己的 AI。 deeplearning.ai https:&#x2F;&#x2F;www.coursera.org&#x2F;learn&#x2F;neural-networks-deep-learning?action&#x3D;enroll ht">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C_DL_W3">
+<meta property="og:url" content="http://duanyaqi.com/2022/03/28/C-DL-W3/index.html">
+<meta property="og:site_name" content="Duan&#39;s Blog">
+<meta property="og:description" content="深度学习工程师由 deeplearning.ai 出品，网易引进的正版授权中文版深度学习工程师微专业课程，让你在了解丰富的人工智能应用案例的同时，学会在实践中搭建出最先进的神经网络模型，训练出属于你自己的 AI。 deeplearning.ai https:&#x2F;&#x2F;www.coursera.org&#x2F;learn&#x2F;neural-networks-deep-learning?action&#x3D;enroll ht">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617684670783.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617684662336.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617684684991.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/20171113163112581">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617685956590.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617856413391.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617856422625.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617856434070.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/equation-1617850769804.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617856385977.png">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-61a14d6d632447896afebe4680a2e16d_b.jpg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617856248776.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/20171122223431927">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/equation-error.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/e8e1e932abb7a0bb44cab6403657321d.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/20171123160012172">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/20171124141447596">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/20171127134439086">
+<meta property="article:published_time" content="2022-03-28T07:58:16.000Z">
+<meta property="article:modified_time" content="2022-03-28T07:59:34.868Z">
+<meta property="article:author" content="Duan Yaqi">
+<meta property="article:tag" content="DL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://duanyaqi.com/2022/03/28/C-DL-W3/assets/1617684670783.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://duanyaqi.com/2022/03/28/C-DL-W3/"/>
+
+
+
+
+
+  <title>C_DL_W3 | Duan's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/DuanYaQi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Duan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">For AI</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://duanyaqi.com/2022/03/28/C-DL-W3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C_DL_W3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-03-28T15:58:16+08:00">
+                2022-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  21
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="深度学习工程师"><a href="#深度学习工程师" class="headerlink" title="深度学习工程师"></a>深度学习工程师</h1><p>由 deeplearning.ai 出品，网易引进的正版授权中文版深度学习工程师微专业课程，让你在了解丰富的人工智能应用案例的同时，学会在实践中搭建出最先进的神经网络模型，训练出属于你自己的 AI。</p>
+<p>deeplearning.ai</p>
+<p><a target="_blank" rel="noopener" href="https://www.coursera.org/learn/neural-networks-deep-learning?action=enroll">https://www.coursera.org/learn/neural-networks-deep-learning?action=enroll</a></p>
+<p><a target="_blank" rel="noopener" href="https://study.163.com/my#/smarts">https://study.163.com/my#/smarts</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av66644404">https://www.bilibili.com/video/av66644404</a></p>
+<p><strong>note</strong></p>
+<p><a target="_blank" rel="noopener" href="https://redstonewill.blog.csdn.net/article/details/78519599">https://redstonewill.blog.csdn.net/article/details/78519599</a></p>
+<p><a target="_blank" rel="noopener" href="https://redstonewill.blog.csdn.net/article/details/78600255">https://redstonewill.blog.csdn.net/article/details/78600255</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/column/DeepLearningNotebook">https://www.zhihu.com/column/DeepLearningNotebook</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ai-start.com/dl2017/">http://www.ai-start.com/dl2017/</a></p>
+<p><strong>课后作业</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013733326/article/details/79827273">https://blog.csdn.net/u013733326/article/details/79827273</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.heywhale.com/mw/project/5e20243e2823a10036b542da">https://www.heywhale.com/mw/project/5e20243e2823a10036b542da</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><ul>
+<li>[x] no question</li>
+</ul>
+<hr>
+<h2 id="结构化机器学习项目"><a href="#结构化机器学习项目" class="headerlink" title="结构化机器学习项目"></a>结构化机器学习项目</h2><h3 id="第一周-机器学习（ML）策略（1）"><a href="#第一周-机器学习（ML）策略（1）" class="headerlink" title="第一周 机器学习（ML）策略（1）"></a>第一周 机器学习（ML）策略（1）</h3><h4 id="1-1-为什么是-ML-策略"><a href="#1-1-为什么是-ML-策略" class="headerlink" title="1.1 为什么是 ML 策略"></a>1.1 为什么是 ML 策略</h4><p>改善模型性能的方法：</p>
+<ul>
+<li>收集更多的数据</li>
+<li>收集多样的训练集</li>
+<li>用梯度下降训练更久</li>
+<li>试用更好的优化方法adam等</li>
+<li>尝试更大/更小的网络</li>
+<li>尝试 dropout</li>
+<li>尝试添加 L2 正则化项</li>
+<li>改变网络的架构</li>
+</ul>
+<hr>
+<h4 id="1-2-正交化"><a href="#1-2-正交化" class="headerlink" title="1.2 正交化"></a>1.2 正交化</h4><p>orthogonalization</p>
+<p>正交意味着互成 90 度，即每一个维度只控制其所能控制的变量，不会影响以另一维度为自变量的因变量。</p>
+<ol>
+<li>系统在训练集上表现的不错（训练更大的网络，切换更好的优化算法）</li>
+<li>紧接着希望在验证集上表现的不错（正则化，更大的数据集）</li>
+<li>然后在测试集上表现得不错（更大的验证集）</li>
+<li>最后在真实世界里表现良好（改变验证集或 cost 函数）</li>
+</ol>
+<p>而这些调节方法（旋钮）只会对应一个“功能”，是正交的。</p>
+<p>一般不用 early stopping。因为同时影响两个测试和验证，不具有独立性、正交性。</p>
+<hr>
+<h4 id="1-3-单一数字评估指标"><a href="#1-3-单一数字评估指标" class="headerlink" title="1.3 单一数字评估指标"></a>1.3 单一数字评估指标</h4><p><img src="assets/1617684670783.png" alt="1617684670783"></p>
+<p>precision 查准率：在模型识别出的所有猫里，有多少确实是猫</p>
+<p>recall 查全率（召回率）：对于所有的猫，模型识别出了多少只</p>
+<p><img src="assets/1617684662336.png" alt="1617684662336"></p>
+<p><img src="assets/1617684684991.png" alt="1617684684991"></p>
+<p>F1 score 为查准率和查全率的平均值，即单实数评估指标。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ F_{1}=\frac{2}{\frac{1}{P}+\frac{1}{R}} =
+ \frac{2 \cdot P \cdot R}{P+R} 
+\end{equation}</script><p>harmonic mean of P and R，调和平均</p>
+<p>除了F1 Score之外，我们还可以使用平均值作为单实数评价指标来对模型进行评估。</p>
+<p><img src="assets/20171113163112581" alt="这里写图片描述"></p>
+<p>验证集 +单一数字评估指标加速迭代过程</p>
+<hr>
+<h4 id="1-4-满足和优化指标"><a href="#1-4-满足和优化指标" class="headerlink" title="1.4 满足和优化指标"></a>1.4 满足和优化指标</h4><p>Satisficing and Optimizing metrics</p>
+<p>如果你要考虑 N 个指标，有时候选择其中 1 个指标做为优化指标是合理的。所以你想尽量优化那个指标；然后剩下 N-1 个指标都是满足指标，意味着只要它们达到一定阈值，例如运行时间快于100毫秒，但只要达到一定的阈值，你不在乎它超过那个门槛之后的表现，但它们必须达到这个门槛。</p>
+<p><strong>N metric:</strong> 1 <u>optimizing</u>, N-1 <u>satisficing</u></p>
+<p><img src="assets/1617685956590.png" alt="1617685956590"></p>
+<p>e.g. <strong>maximize accuracy</strong> subject to <strong>running time &lt; 100 ms</strong></p>
+<hr>
+<h4 id="1-5-训练-验证-测试集划分"><a href="#1-5-训练-验证-测试集划分" class="headerlink" title="1.5 训练 / 验证 / 测试集划分"></a>1.5 训练 / 验证 / 测试集划分</h4><p>让验证集和测试集服从相同的分布 ← 随机地混排到验证/测试中 </p>
+<p>选择一个验证集和测试集，以反映您期望在未来获得的数据，并考虑做好这些数据的重要性</p>
+<hr>
+<h4 id="1-6-验证集-测试集的大小"><a href="#1-6-验证集-测试集的大小" class="headerlink" title="1.6 验证集/测试集的大小"></a>1.6 验证集/测试集的大小</h4><p>当样本数量不多（小于一万）的时候，通常将Train/dev/test sets的比例设为60%/20%/20%，在没有dev sets的情况下，Train/test sets的比例设为70%/30%。</p>
+<p><img src="assets/1617856413391.png" alt="1617856413391"></p>
+<p><img src="assets/1617856422625.png" alt="1617856422625"></p>
+<p>当样本数量很大（百万级别）的时候，通常将相应的比例设为98%/1%/1%或者99%/1%。</p>
+<p><img src="assets/1617856434070.png" alt="1617856434070"></p>
+<p>对于dev sets数量的设置，应该遵循的准则是通过dev sets能够检测不同算法或模型的<strong>区别</strong>，以便选择出更好的模型。</p>
+<p>对于test sets数量的设置，应该遵循的准则是通过test sets能够反映出模型在<strong>实际中的表现</strong>。</p>
+<p>实际应用中，可能只有train/dev sets，而没有test sets。这种情况也是允许的，只要算法模型没有对dev sets<strong>过拟合</strong>。但是，条件允许的话，最好是有test sets，实现无偏估计。</p>
+<hr>
+<h4 id="1-7-什么时候该改变验证-测试集和指标"><a href="#1-7-什么时候该改变验证-测试集和指标" class="headerlink" title="1.7 什么时候该改变验证/ 测试集和指标"></a>1.7 什么时候该改变验证/ 测试集和指标</h4><p>Metric + Dev: prefers A <em>(misprediction)</em><br>You / Users: prefers B</p>
+<p>当评估指标，无法正确衡量算法之间的优劣排序时，就需要指标了。比如加权重项，分类错误的惩罚权重加大10倍。</p>
+<p><img src="assets/equation-1617850769804.svg" alt="[公式]"></p>
+<ol>
+<li><strong>Place the target:</strong> 定义衡量指标以评估分类器</li>
+<li><strong>Shoot at target:</strong> 单度考虑如何在此指标上做得好，并不断动态修改调整。</li>
+</ol>
+<p>如果在metric + dev / test set上效果好，但在实际应用上效果不好相对应，则更改metric and/or dev / test set。需要动态改变评价标准的情况是 dev/test sets 与实际应用的样本分布不一致。</p>
+<hr>
+<h4 id="1-8-Why-human-level-performance"><a href="#1-8-Why-human-level-performance" class="headerlink" title="1.8 Why human-level performance"></a>1.8 Why human-level performance</h4><p><img src="assets/1617856385977.png" alt="1617856385977"></p>
+<p>横坐标是训练时间，纵坐标是准确性。机器学习模型经过训练会不断接近human-level performance甚至超过它。但是，超过human-level performance之后，准确性会上升得比较缓慢，最终不断接近理想的最优情况，我们称之为bayes optimal error。理论上任何模型都不能超过它，bayes optimal error代表了最佳表现。</p>
+<p>实际上，human-level performance在某些方面有不俗的表现。例如图像识别、语音识别等领域，人类是很擅长的。所以，让机器学习模型性能不断接近 human-level performance 非常必要也做出很多努力：</p>
+<ul>
+<li>Get labeled data from humans. 从人类获取带标签的数据</li>
+<li>Gain insight from manual 手动 error analysis: Why did a person get this right?</li>
+<li>Better analysis of bias/variance.偏差/方差</li>
+</ul>
+<hr>
+<h4 id="1-9-可避免偏差"><a href="#1-9-可避免偏差" class="headerlink" title="1.9 可避免偏差"></a>1.9 可避免偏差</h4><p><img src="https://pic2.zhimg.com/v2-61a14d6d632447896afebe4680a2e16d_b.jpg" alt="img"></p>
+<p>第一个例子中，这 8 - 1 = 7% 衡量了可避免偏差大小，而10 - 8 = 2%衡量了方差大小。所以在左边这个例子里，专注减少可避免偏差可能潜力更大。</p>
+<p>第二个例子可避免偏差可能在 8 - 7.5 = 0.5% 左右，或者 0.5% 是可避免偏差的指标。而这个10 - 8 = 2%是方差的指标，所以要减少这个 2% 比减少这个 0.5% 空间要大得多。</p>
+<p>如果算法在训练集上的表现和人类水平的表现有很大差距的话，说明算法对训练集的拟合并不好。所以从减少偏差和方差的角度看，在这种情况下，我会把重点放在减少偏差上。你需要做的是，比如说训练更大的神经网络，或者跑久一点梯度下降，就试试能不能在训练集上做得更好。如果算法与人类水平还比较接近，就可以注重减少方差，将验证集的 performance 接近于训练集。</p>
+<p>我们希望提高训练集的 performance，直到接近 bayes optimal error，但实际上也不希望做到比 bayes optimal error 更好，因为理论上是不可能超过 bayes optimal error 的，除非过拟合。</p>
+<p>把 training error 与 human-level error 之间的差值称为<strong>bias</strong>，也称作 avoidable bias；把 dev error 与 training error 之间的差值称为<strong>variance</strong>。根据 bias 和 variance 值的相对大小，可以知道算法模型是否发生了欠拟合或者过拟合。</p>
+<blockquote>
+<p> 其中 human-level error 近似于 bayes optimal error</p>
+</blockquote>
+<hr>
+<h4 id="1-10-理解人的表现"><a href="#1-10-理解人的表现" class="headerlink" title="1.10 理解人的表现"></a>1.10 理解人的表现</h4><p><strong>human-level error</strong> as a proxy for <strong>Bayes error</strong></p>
+<p>不同人群的错误率不同。一般来说，将表现最好的那一组，即Team of experienced doctors作为human-level performance</p>
+<p>training error 到 bayes optimal error 的差距，告诉你 avoidable bias 问题有多大，avoidable bias 问题有多严重，而 training error 与  dev error 之间的差值告诉你方差上的问题有多大，你的算法是否能够从训练集泛化推广到开发集。</p>
+<hr>
+<h4 id="1-11-Surpassing-human-level-performance"><a href="#1-11-Surpassing-human-level-performance" class="headerlink" title="1.11 Surpassing human- level performance"></a>1.11 Surpassing human- level performance</h4><p>对于自然感知类问题，例如视觉、听觉等，机器学习的表现不及人类。但是在很多其它方面，机器学习模型的表现已经超过人类了，通常输入为结构化数据：</p>
+<ul>
+<li><strong>Online advertising</strong></li>
+<li><strong>Product recommendations</strong></li>
+<li><strong>Logistics(predicting transit time)</strong></li>
+<li><strong>Loan approvals</strong></li>
+</ul>
+<p>机器学习模型超过human-level performance是比较困难的。但是只要提供足够多的样本数据，训练复杂的神经网络，模型预测准确性会大大提高，很有可能接近甚至超过human-level performance。当算法模型的表现超过human-level performance时，很难再通过人的直觉来解决如何继续提高算法模型性能的问题。</p>
+<hr>
+<h4 id="1-12-改善模型表现"><a href="#1-12-改善模型表现" class="headerlink" title="1.12 改善模型表现"></a>1.12 改善模型表现</h4><p>想要让一个监督学习算法达到<strong>应用</strong>，基本上希望或者假设你可以完成两件事情。首先，你的算法对训练集的拟合很好，这可以看成是你能做到<strong>可避免偏差很低</strong>。还有第二件事你可以做好的是，在训练集中做得很好，然后推广到开发集和测试集也很好，这就是说<strong>方差不大</strong>。解决方法如下：</p>
+<p><img src="assets/1617856248776.png" alt="1617856248776"></p>
+<hr>
+<h3 id="第二周-机器学习（ML）策略（2）"><a href="#第二周-机器学习（ML）策略（2）" class="headerlink" title="第二周 机器学习（ML）策略（2）"></a>第二周 机器学习（ML）策略（2）</h3><h4 id="2-1-进行误差分析"><a href="#2-1-进行误差分析" class="headerlink" title="2.1 进行误差分析"></a>2.1 进行误差分析</h4><p>建立一个表格，表格的第一列对应你要评估的想法，比如狗的问题，猫科动物的问题，模糊图像的问题。扫过每一列，最后统计各列有多少百分比图像打了勾。</p>
+<p>通常来说，<strong>比例越大</strong>，影响越大，越应该花费时间和精力着重解决这一问题。这种 error analysis 让我们改进模型更加有针对性，从而提高效率。有人手时，可以不同小组处理不同问题。</p>
+<hr>
+<h4 id="2-2-清楚标注错误的数据"><a href="#2-2-清楚标注错误的数据" class="headerlink" title="2.2 清楚标注错误的数据"></a>2.2 清楚标注错误的数据</h4><p>深度学习算法对训练集的<strong>随机误差</strong>很健壮，但对<strong>系统性的错误</strong>就没那么健壮了。即可以有个别错误。 </p>
+<p><strong>针对验证集，则看整体验证集的错误率</strong></p>
+<p>​    Overall dev set error: 10%</p>
+<p>​    Errors due incorrect labels: 0.6%</p>
+<p>​    Errors due to other causes: 9.4%</p>
+<p>上面数据表明 Errors due incorrect labels 所占的比例仅为 0.6%，占 dev set error 的6%，而其它类型错误占 dev set error 的 94%。因此，这种情况下，可以忽略incorrectly labeled data，而去修复其他原因，造成的结果。</p>
+<p><strong>如果优化DL算法后，出现下面这种情况：</strong></p>
+<p>Overall dev set error: 2%</p>
+<p>Errors due incorrect labels: 0.6%</p>
+<p>Errors due to other causes: 1.4%</p>
+<p>上面数据表明 Errors due incorrect labels 所占的比例依然为0.6%，但是却占 dev set error的 30%，而其它类型错误占 dev set error 的70%。因此，这种情况下，incorrectly labeled data 不可忽略，需要手动修正。</p>
+<p>我们知道，<strong>dev set 的主要作用是在不同算法之间进行比较，选择错误率最小的算法模型</strong>。但是，如果有 incorrectly labeled data 的存在，当不同算法<strong>错误率比较接近</strong>的时候，我们无法仅仅根据 Overall dev set error 准确指出哪个算法模型更好，<strong>必须修正</strong> incorrectly labeled data。</p>
+<p>关于修正 incorrect dev/test set data，有几条建议：</p>
+<ul>
+<li>对验证和测试集应用相同的过程，以确保它们继续服从同一分布。</li>
+<li>考虑研究算法正确和错误的示例</li>
+<li>训练和验证/测试数据现在可能服从略有不同的分布</li>
+</ul>
+<hr>
+<h4 id="2-3-快速搭建你的第一个系统，并进行迭代"><a href="#2-3-快速搭建你的第一个系统，并进行迭代" class="headerlink" title="2.3 快速搭建你的第一个系统，并进行迭代"></a>2.3 快速搭建你的第一个系统，并进行迭代</h4><ul>
+<li><p><strong>快速</strong>设置验证/测试集和指标，错了可以改</p>
+</li>
+<li><p><strong>快速</strong>构建初始系统，并找到训练集，训练看效果，理解算法表现，及在验证集测试集上的评估指标上的表现。快速和粗糙的实现（<strong>quick and dirty implementation</strong>），</p>
+</li>
+<li>使用偏差/方差分析和错误分析来<strong>优先</strong>确定后续步骤</li>
+</ul>
+<hr>
+<h4 id="2-4-使用来自不同分布的数据，进行训练和测试Training-and-testing-on-different-distributions"><a href="#2-4-使用来自不同分布的数据，进行训练和测试Training-and-testing-on-different-distributions" class="headerlink" title="2.4 使用来自不同分布的数据，进行训练和测试Training and testing on different distributions"></a>2.4 使用来自不同分布的数据，进行训练和测试Training and testing on different distributions</h4><p>以猫类识别为例，train set 来自于网络下载（webpages），图片比较清晰；dev/test set 来自用户手机拍摄（mobile app），图片比较模糊。假如 train set 的大小为200000，而 dev/test set 的大小为10000，显然 train set 要远远大于 dev/test set。</p>
+<p><img src="assets/20171122223431927" alt="这里写图片描述"></p>
+<p>虽然 dev/test set 质量不高，但是<strong>模型最终主要应用在对这些模糊的照片的处理上</strong>。面对train set 与 dev/test set 分布不同的情况，有两种解决方法。</p>
+<p>× <strong>第一种方法</strong>是将train set和dev/test set<strong>完全混合</strong>，然后在<strong>随机选择</strong>一部分作为train set，另一部分作为dev/test set。例如，混合210000例样本，然后随机选择205000例样本作为train set，2500例作为dev set，2500例作为test set。这种做法的优点是实现train set和dev/test set<strong>分布一致</strong>，<strong>缺点</strong>是dev/test set中webpages图片所占的<strong>比重</strong>比mobile app图片大得多。例如dev set包含2500例样本，大约有2381例来自webpages，只有119例来自mobile app。这样，dev set的算法模型对比验证，仍然主要由webpages决定，实际应用的mobile app图片所占比重很小，<strong>达不到验证效果</strong>。因此，这种方法并不是很好。</p>
+<p>√ <strong>第二种方法</strong>是将原来的train set和一部分dev/test set组合当成train set，剩下的dev/test set分别作为dev set和test set。例如，200000例webpages图片和5000例mobile app图片组合成train set，剩下的2500例mobile app图片作为dev set，2500例mobile app图片作为test set。其关键在于dev/test set全部来自于mobile app。这样<strong>保证了验证集最接近实际应用场合</strong>。这种方法较为常用，而且性能表现比较好。</p>
+<hr>
+<h4 id="2-5-数据分布不匹配时，偏差与方差的分析Bias-and-Variance-with-mismatched-data-distributions"><a href="#2-5-数据分布不匹配时，偏差与方差的分析Bias-and-Variance-with-mismatched-data-distributions" class="headerlink" title="2.5 数据分布不匹配时，偏差与方差的分析Bias and Variance with mismatched data distributions"></a>2.5 数据分布不匹配时，偏差与方差的分析Bias and Variance with mismatched data distributions</h4><p><strong>随机打散训练集</strong>，然后<strong>分出一部分训练集</strong>作为<strong>训练-验证集</strong>（training-dev），这是一个新的数据子集。就像验证集和测试集来自同一分布，训练集、训练-验证集也来自同一分布。但不同的地方是，现在只在<strong>训练集</strong>训练你的神经网络，<strong>不会让神经网络在训练-验证集上跑后向传播</strong>。</p>
+<p>有一个样本，训练集误差是1%，训练-验证集误差是9%，验证集误差是10%，和以前一样。算法<strong>存在方差</strong>问题，因为训练-验证集的错误率是在和训练集来自<strong>同一分布</strong>的数据中测得的。</p>
+<p>有一个样本，训练集误差为1%，训练-验证误差为1.5%，验证集误差为10%。算法<strong>方差问题很小</strong>，转到验证集时，错误率就大大上升了，所以这是<strong>数据不匹配</strong>的问题。因为你的学习算法没有直接在训练-验证集或者验证集训练过，但是这<strong>两个数据集来自不同的分布</strong>。</p>
+<p>有一个样本，训练集误差是10%，训练-验证误差是11%，验证集误差为12%，人类水平对贝叶斯错误率的估计大概是0%。则算法<strong>存在偏差问题</strong>。存在<strong>可避免偏差</strong>问题。</p>
+<p>有一个样本，训练集误差是10%，训练-验证误差为11%，验证集误差为20%，有两个问题。第一，<strong>可避免偏差</strong>相当<strong>高</strong>，因为你在训练集上都没有做得很好，而人类能做到接近0%错误率，但你的算法在训练集上错误率为10%。这里方差似乎很小，但存在<strong>数据不匹配问题</strong>。</p>
+<p><img src="assets/equation-error.svg" alt=""></p>
+<hr>
+<h4 id="2-6-定位数据不匹配"><a href="#2-6-定位数据不匹配" class="headerlink" title="2.6 定位数据不匹配"></a>2.6 定位数据不匹配</h4><p>训练集来自和验证测试集不同的分布，会出现数据不匹配的问题，解决方法：</p>
+<ul>
+<li>进行人工错误分析，了解培训验证/测试集之间的差异</li>
+<li>使培训数据更加相似；收集更多类似于验证/测试集的数据</li>
+</ul>
+<p>利用一种技术是人工合成数据（<strong>artificial data synthesis</strong>）</p>
+<p><img src="assets/e8e1e932abb7a0bb44cab6403657321d.png" alt="img"></p>
+<p>通过人工数据合成，你可以快速制造更多的训练数据，就像真的在车里录的那样，那就不需要花时间实际出去收集数据。</p>
+<p>人工数据合成有一个潜在问题，如果加入的汽车噪声是相同的，算法对加入的汽车噪音过拟合，丢失对其他的汽车噪声处理。即学习算法可能会对合成的这一个小子集过拟合。</p>
+<hr>
+<h4 id="2-7-迁移学习"><a href="#2-7-迁移学习" class="headerlink" title="2.7 迁移学习"></a>2.7 迁移学习</h4><p>transfer learning</p>
+<p>我们有手写数字的大数据集，并通过其训练了识别网络。现在需要识别医学图像，只需要把最后一层更换，重新学习参数即可。因为<strong>网络一部分的目的就是学习低层次特征</strong>，点/边缘/曲线/对象等。</p>
+<p>如果有医学图像的小数据集，可以只训练输出层前的最后一/两层的网络参数。</p>
+<p><img src="assets/20171123160012172" alt="这里写图片描述"></p>
+<p>如果有医学图像的大数据集，也可以训练整个网络的参数。（也可以加入一些新的隐藏层）</p>
+<p><img src="assets/20171124141447596" alt="这里写图片描述"></p>
+<p>这个过程中，数字识别的模型称为预训练模型(pre-training)，重新学习网络中的某些参数，为微调（fine-tuning）</p>
+<p>迁移学习适合的场景：</p>
+<ul>
+<li>任务A和B的输入x相同（都是图片/语音）</li>
+<li>任务A的数据比任务B多得多</li>
+<li>任务A的低级特征可能有助于学习B</li>
+</ul>
+<hr>
+<h4 id="2-8-多任务学习"><a href="#2-8-多任务学习" class="headerlink" title="2.8 多任务学习"></a>2.8 多任务学习</h4><p>迁移学习是串行的，而多任务学习，是同时开始学习的。让单个神经网络同时做几件事情，然后希望这里每个任务都能帮到其他所有任务。</p>
+<p>例如汽车自动驾驶中，需要实现的多任务为行人、车辆、交通标志和信号灯。如果检测出汽车和交通标志，则y为：</p>
+<script type="math/tex; mode=display">
+y=
+\left[
+ \begin{matrix}
+   0\\
+   1\\
+   1\\
+   0
+  \end{matrix}
+  \right]</script><p>多任务学习模型的cost function为：</p>
+<script type="math/tex; mode=display">
+\frac1m\sum_{i=1}^m\sum_{j=1}^cL(\hat y_j^{(i)},y_j^{(i)})</script><p>其中，j 表示任务下标，总有 c 个任务。对应的loss function为：</p>
+<script type="math/tex; mode=display">
+L(\hat y_j^{(i)},y_j^{(i)})=-y_j^{(i)}log\ \hat y_j^{(i)}-(1-y_j^{(i)})log\ (1-\hat y_j^{(i)})</script><p>值得一提的是，Multi-task learning 与 Softmax regression 的区别在于 Softmax regression 是 <strong>single label</strong> 的，即输出向量 y <strong>只有一个元素为1</strong>；而 Multi-task learning 是 multiple labels 的，即输出向量 y 可以<strong>有多个元素为1</strong>。</p>
+<p>多任务学习是使用单个神经网络模型来实现多个任务。实际上，也可以分别构建多个神经网络来实现。但是，如果各个任务之间是相似问题（例如都是图片类别检测），则可以使用多任务学习模型。另外，多任务学习中，可能存在训练样本Y某些label空白的情况，这并不影响多任务模型的训练。总体来说，多任务学习的应用场合主要包括三点：</p>
+<ul>
+<li>训练一组任务，这些任务可以从共享的低级特征中受益。</li>
+<li><p>每个任务的数据量非常相似。</p>
+</li>
+<li><p>可以训练<strong>足够大</strong>的神经网络来很好地完成所有任务。比单独训练神经网络来单独完成各个任务性能要更好。</p>
+</li>
+</ul>
+<p>迁移学习和多任务学习在实际应用中，迁移学习使用得更多一些。</p>
+<hr>
+<h4 id="2-9-什么是端到端的深度学习"><a href="#2-9-什么是端到端的深度学习" class="headerlink" title="2.9 什么是端到端的深度学习"></a>2.9 什么是端到端的深度学习</h4><p>端到端（end-to-end）深度学习就是将所有不同阶段的数据处理系统或学习系统模块组合在一起，用一个<strong>单一</strong>的神经网络模型来实现所有的功能。它将所有<strong>模块混合</strong>在一起，只关心输入和输出。以语音识别为例，传统的算法流程和end-to-end模型的区别如下：</p>
+<p><img src="assets/20171127134439086" alt="这里写图片描述"></p>
+<p>如果训练样本足够大，神经网络模型足够复杂，那么 end-to-end 模型性能比传统机器学习分块模型更好。实际上，end-to-end 让神经网络模型内部去自我训练模型特征，自我调节，增加了模型整体契合度。<strong>关键问题是：是否有足够的数据来学习从 X 映射到 Y 所需的复杂度函数？</strong></p>
+<p>人脸识别系统，先检测人脸，再对比身份更好。</p>
+<p>两步法好有两个原因。一是，你解决的两个问题，每个问题实际上要简单得多。第二，两个子任务的训练数据都很多。具体来说，有很多数据可以用于人脸识别训练，对于这里的任务1来说，任务就是观察一张图，找出人脸所在的位置，把人脸图像框出来，所以有很多数据，有很多标签数据，其中是图片，是表示人脸的位置，你可以建立一个神经网络，可以很好地处理任务1。然后任务2，也有很多数据可用，输入一张裁剪得很紧凑的照片，判断照片里人的身份。</p>
+<p><strong>一步到位</strong>的数据就少得多，其中是门禁系统拍摄的图像，是那人的身份，因为你<strong>没有足够多的数据</strong>去解决这个端到端学习问题，但你却<strong>有足够多的数据</strong>来解决子问题 1 和子问题 2。</p>
+<hr>
+<h4 id="2-10-是否要使用端到端的深度学习"><a href="#2-10-是否要使用端到端的深度学习" class="headerlink" title="2.10 是否要使用端到端的深度学习"></a>2.10 是否要使用端到端的深度学习</h4><p><strong>优点</strong></p>
+<ul>
+<li>让数据说话</li>
+<li>减少所需组件的手工设计</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>可能需要大量数据</li>
+<li>丢失了<strong>可能</strong>有用的手工设计组件</li>
+</ul>
+<p>例如，在语音识别领域，早期的识别系统有这个音位概念，就是基本的声音单元，如cat单词的“cat”的Cu-、Ah-和Tu-，我觉得这个音位是人类语言学家生造出来的，我实际上认为音位其实是语音学家的幻想，用音位描述语言也还算合理。但是<strong>不要强迫你的学习算法以音位为单位思考</strong>，这点有时没那么明显。如果你<strong>让你的学习算法学习它想学习的任意表示方式</strong>，而不是强迫你的学习算法使用音位作为表示方式，那么其整体表现可能会更好。</p>
+<p>精心设计的人工组件<strong>可能</strong>非常有用，但它们也有可能真的伤害到你的算法表现。例如，强制你的算法以音位为单位思考，也许让算法自己找到更好的表示方法更好。所以这是一把<strong>双刃剑</strong>，可能有坏处，可能有好处，但往往好处更多，手工设计的组件往往在训练集更小的时候帮助更大。</p>
+<hr>
+<h3 id="第三周-人工智能行业大师访谈"><a href="#第三周-人工智能行业大师访谈" class="headerlink" title="第三周 人工智能行业大师访谈"></a>第三周 人工智能行业大师访谈</h3><h4 id="3-1-吴恩达采访-Andrej-Karpathy"><a href="#3-1-吴恩达采访-Andrej-Karpathy" class="headerlink" title="3.1. 吴恩达采访 Andrej Karpathy"></a>3.1. 吴恩达采访 Andrej Karpathy</h4><p>imageNet创始人</p>
+<p>cs231n</p>
+<p>openAI</p>
+<p>接触底层</p>
+<hr>
+<h4 id="3-2-采访-Ruslan-Salakhutdinov"><a href="#3-2-采访-Ruslan-Salakhutdinov" class="headerlink" title="3.2. 采访 Ruslan Salakhutdinov"></a>3.2. 采访 Ruslan Salakhutdinov</h4><p>Apple</p>
+<p>CMU</p>
+<p>尝试不同的事情，不要害怕尝试创新</p>
+<p>了解底层</p>
+<p>学术界 时间</p>
+<p>工业界 钱</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DL/" rel="tag"># DL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/28/C-DL-W2/" rel="next" title="C_DL_W2">
+                <i class="fa fa-chevron-left"></i> C_DL_W2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/28/C-DL-W4/" rel="prev" title="C_DL_W4">
+                C_DL_W4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B7%A5%E7%A8%8B%E5%B8%88"><span class="nav-number">1.</span> <span class="nav-text">深度学习工程师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.2.</span> <span class="nav-text">结构化机器学习项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%91%A8-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88ML%EF%BC%89%E7%AD%96%E7%95%A5%EF%BC%881%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">第一周 机器学习（ML）策略（1）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF-ML-%E7%AD%96%E7%95%A5"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.1 为什么是 ML 策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">1.2 正交化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E5%8D%95%E4%B8%80%E6%95%B0%E5%AD%97%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">1.3 单一数字评估指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-%E6%BB%A1%E8%B6%B3%E5%92%8C%E4%BC%98%E5%8C%96%E6%8C%87%E6%A0%87"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">1.4 满足和优化指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-%E8%AE%AD%E7%BB%83-%E9%AA%8C%E8%AF%81-%E6%B5%8B%E8%AF%95%E9%9B%86%E5%88%92%E5%88%86"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">1.5 训练 &#x2F; 验证 &#x2F; 测试集划分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-%E9%AA%8C%E8%AF%81%E9%9B%86-%E6%B5%8B%E8%AF%95%E9%9B%86%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">1.6 验证集&#x2F;测试集的大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%AF%A5%E6%94%B9%E5%8F%98%E9%AA%8C%E8%AF%81-%E6%B5%8B%E8%AF%95%E9%9B%86%E5%92%8C%E6%8C%87%E6%A0%87"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">1.7 什么时候该改变验证&#x2F; 测试集和指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8-Why-human-level-performance"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">1.8 Why human-level performance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9-%E5%8F%AF%E9%81%BF%E5%85%8D%E5%81%8F%E5%B7%AE"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">1.9 可避免偏差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-10-%E7%90%86%E8%A7%A3%E4%BA%BA%E7%9A%84%E8%A1%A8%E7%8E%B0"><span class="nav-number">1.2.1.10.</span> <span class="nav-text">1.10 理解人的表现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-11-Surpassing-human-level-performance"><span class="nav-number">1.2.1.11.</span> <span class="nav-text">1.11 Surpassing human- level performance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-12-%E6%94%B9%E5%96%84%E6%A8%A1%E5%9E%8B%E8%A1%A8%E7%8E%B0"><span class="nav-number">1.2.1.12.</span> <span class="nav-text">1.12 改善模型表现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%91%A8-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88ML%EF%BC%89%E7%AD%96%E7%95%A5%EF%BC%882%EF%BC%89"><span class="nav-number">1.2.2.</span> <span class="nav-text">第二周 机器学习（ML）策略（2）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E8%BF%9B%E8%A1%8C%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">2.1 进行误差分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E6%B8%85%E6%A5%9A%E6%A0%87%E6%B3%A8%E9%94%99%E8%AF%AF%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.2 清楚标注错误的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%B9%B6%E8%BF%9B%E8%A1%8C%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">2.3 快速搭建你的第一个系统，并进行迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-%E4%BD%BF%E7%94%A8%E6%9D%A5%E8%87%AA%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83%E5%92%8C%E6%B5%8B%E8%AF%95Training-and-testing-on-different-distributions"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">2.4 使用来自不同分布的数据，进行训练和测试Training and testing on different distributions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83%E4%B8%8D%E5%8C%B9%E9%85%8D%E6%97%B6%EF%BC%8C%E5%81%8F%E5%B7%AE%E4%B8%8E%E6%96%B9%E5%B7%AE%E7%9A%84%E5%88%86%E6%9E%90Bias-and-Variance-with-mismatched-data-distributions"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">2.5 数据分布不匹配时，偏差与方差的分析Bias and Variance with mismatched data distributions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-%E5%AE%9A%E4%BD%8D%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%8C%B9%E9%85%8D"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">2.6 定位数据不匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">2.7 迁移学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">2.8 多任务学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9-%E4%BB%80%E4%B9%88%E6%98%AF%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">2.9 什么是端到端的深度学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-10-%E6%98%AF%E5%90%A6%E8%A6%81%E4%BD%BF%E7%94%A8%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.2.10.</span> <span class="nav-text">2.10 是否要使用端到端的深度学习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%91%A8-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%A1%8C%E4%B8%9A%E5%A4%A7%E5%B8%88%E8%AE%BF%E8%B0%88"><span class="nav-number">1.2.3.</span> <span class="nav-text">第三周 人工智能行业大师访谈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E5%90%B4%E6%81%A9%E8%BE%BE%E9%87%87%E8%AE%BF-Andrej-Karpathy"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">3.1. 吴恩达采访 Andrej Karpathy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E9%87%87%E8%AE%BF-Ruslan-Salakhutdinov"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">3.2. 采访 Ruslan Salakhutdinov</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Completion/" rel="tag">Completion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DL/" rel="tag">DL</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PointCloud/" rel="tag">PointCloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLAM/" rel="tag">SLAM</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duan Yaqi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+        本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">    
+        本站访问量<span id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
