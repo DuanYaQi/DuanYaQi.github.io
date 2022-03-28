@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="DL," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="深度学习工程师由 deeplearning.ai 出品，网易引进的正版授权中文版深度学习工程师微专业课程，让你在了解丰富的人工智能应用案例的同时，学会在实践中搭建出最先进的神经网络模型，训练出属于你自己的 AI。 deeplearning.ai https:&#x2F;&#x2F;www.coursera.org&#x2F;learn&#x2F;neural-networks-deep-learning?action&#x3D;enroll ht">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C_DL_W1">
+<meta property="og:url" content="http://duanyaqi.com/2022/03/28/C-DL-W1/index.html">
+<meta property="og:site_name" content="Duan&#39;s Blog">
+<meta property="og:description" content="深度学习工程师由 deeplearning.ai 出品，网易引进的正版授权中文版深度学习工程师微专业课程，让你在了解丰富的人工智能应用案例的同时，学会在实践中搭建出最先进的神经网络模型，训练出属于你自己的 AI。 deeplearning.ai https:&#x2F;&#x2F;www.coursera.org&#x2F;learn&#x2F;neural-networks-deep-learning?action&#x3D;enroll ht">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616421771173.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616422154046.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616423575240.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616423610014.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616475094011.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616475156017.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340213621.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340240915.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616476097923.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/20140107114211578.jpeg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/20140107114309671.jpeg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210324213334658.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616478167609.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210324205340803.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210324211215820.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210324214705487.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616648854396.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616728252104.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616728799846.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616729421965.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616729548101.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616729708292.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616729799515.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616731945222.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616732735832.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340426834.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340433434.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340436976.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340602054.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340606506.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340610258.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/equation-1617340684960.svg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20220325173040770.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20220325173054231.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20220325173244818.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20220325173254167.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20220325173301855.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20220325173312749.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210327213042173.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210327213229741.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210327213340105.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210327213540069.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/image-20210327232838851.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616917392656.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616920793507.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616926229300.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616926229300.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616927679151.png">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/v2-6a0a7d63578db464b6fc539ef7e883d6_b.jpg">
+<meta property="og:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/v2-f8839ba29ecee2ecddee04bbe0780825_b.jpg">
+<meta property="article:published_time" content="2022-03-28T07:44:13.000Z">
+<meta property="article:modified_time" content="2022-03-28T07:45:25.865Z">
+<meta property="article:author" content="Duan Yaqi">
+<meta property="article:tag" content="DL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://duanyaqi.com/2022/03/28/C-DL-W1/assets/1616421771173.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://duanyaqi.com/2022/03/28/C-DL-W1/"/>
+
+
+
+
+
+  <title>C_DL_W1 | Duan's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a target="_blank" rel="noopener" href="https://github.com/DuanYaQi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Duan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">For AI</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://duanyaqi.com/2022/03/28/C-DL-W1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C_DL_W1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-03-28T15:44:13+08:00">
+                2022-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  21
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="深度学习工程师"><a href="#深度学习工程师" class="headerlink" title="深度学习工程师"></a>深度学习工程师</h1><p>由 deeplearning.ai 出品，网易引进的正版授权中文版深度学习工程师微专业课程，让你在了解丰富的人工智能应用案例的同时，学会在实践中搭建出最先进的神经网络模型，训练出属于你自己的 AI。</p>
+<p>deeplearning.ai</p>
+<p><a target="_blank" rel="noopener" href="https://www.coursera.org/learn/neural-networks-deep-learning?action=enroll">https://www.coursera.org/learn/neural-networks-deep-learning?action=enroll</a></p>
+<p><a target="_blank" rel="noopener" href="https://study.163.com/my#/smarts">https://study.163.com/my#/smarts</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av66314465">https://www.bilibili.com/video/av66314465</a></p>
+<p><strong>note</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/red_stone1/article/details/78208851">https://blog.csdn.net/red_stone1/article/details/78208851</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/column/DeepLearningNotebook">https://www.zhihu.com/column/DeepLearningNotebook</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ai-start.com/dl2017/">http://www.ai-start.com/dl2017/</a></p>
+<p><strong>课后作业</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013733326/article/details/79827273">https://blog.csdn.net/u013733326/article/details/79827273</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.heywhale.com/mw/project/5e20243e2823a10036b542da">https://www.heywhale.com/mw/project/5e20243e2823a10036b542da</a></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><ul>
+<li>[x] 神经网络和深度学习-<a href="#dz">3.9</a> $dZ^{[2]}$ ????????????????</li>
+</ul>
+<h2 id="神经网络和深度学习"><a href="#神经网络和深度学习" class="headerlink" title="神经网络和深度学习"></a>神经网络和深度学习</h2><h3 id="第一周-深度学习概论"><a href="#第一周-深度学习概论" class="headerlink" title="第一周 深度学习概论"></a>第一周 深度学习概论</h3><h4 id="1-1-欢迎来到深度学习工程微专业"><a href="#1-1-欢迎来到深度学习工程微专业" class="headerlink" title="1.1. 欢迎来到深度学习工程微专业"></a>1.1. 欢迎来到深度学习工程微专业</h4><h4 id="1-2-什么是神经网络？"><a href="#1-2-什么是神经网络？" class="headerlink" title="1.2. 什么是神经网络？"></a>1.2. 什么是神经网络？</h4><p><img src="assets/1616421771173.png" alt="1616421771173"></p>
+<p>输入为房屋面积 , 通过一个神经元（函数运算），然后输出房价 y</p>
+<p>ReLU （Rectified Linear Unit，railu） 修正线性单元  修正是指取不小于0的值</p>
+<p><img src="assets/1616422154046.png" alt="1616422154046"></p>
+<p>中间三个圈为隐藏单元，每个隐藏单元都来自自己学习到的权重，与输入加权求和。</p>
+<hr>
+<h4 id="1-3-用神经网络进行监督学习"><a href="#1-3-用神经网络进行监督学习" class="headerlink" title="1.3. 用神经网络进行监督学习"></a>1.3. 用神经网络进行监督学习</h4><p>监督学习的应用</p>
+<p>实值估计，在线广告，</p>
+<p>机智的选择输入和输出，解决特定问题，并把这部分学习过的组件嵌入到更大型的系统。</p>
+<p>普通应用 对应 标准的神经网络NN</p>
+<p>图像领域内，卷积神经网络 CNN</p>
+<p>对于序列数据，循环神经网络 RNN</p>
+<p>更复杂的应用 复杂的混合神经网络架构。</p>
+<p>训练数据分为<strong>结构化数据</strong>和<strong>非结构化数据</strong></p>
+<p>结构化数据       每个特征都有清晰的定义。</p>
+<p>非结构化数据   例如音频，图像，文本</p>
+<p>好的网络能够同时适应结构化和非结构化数据</p>
+<hr>
+<h4 id="1-4-为什么深度学习会兴起？"><a href="#1-4-为什么深度学习会兴起？" class="headerlink" title="1.4. 为什么深度学习会兴起？"></a>1.4. 为什么深度学习会兴起？</h4><p>普通的模型无法应用海量数据带来的益处，有时也无法处理海量数据，</p>
+<p>而给规模足够大（有许多隐藏神经元）的神经网络输入海量数据，会增强performance</p>
+<p>一些算法创新可以让神经网络运行效率更高，效果更好，是我们可以训练更大规模的网络。</p>
+<p><img src="assets/1616423575240.png" alt="1616423575240"></p>
+<p>传统sigmod函数，让负值梯度趋近于零但不是零，学习会变得非常缓慢，因为当梯度接近0时，使用梯度下降法，参数会变化得很慢，学习也变得很慢。</p>
+<p>而relu让负值梯度直接为0，直接不学习。加速梯度下降。</p>
+<p><img src="assets/1616423610014.png" alt="1616423610014"></p>
+<p>很多时候，有了一个新想法，关于神经网络结构的想法，然后写代码实现想法，结果表现神经网络的效果，然后进一步赶紧神经网络结构的细节。</p>
+<hr>
+<h4 id="1-5-关于这门课"><a href="#1-5-关于这门课" class="headerlink" title="1.5. 关于这门课"></a>1.5. 关于这门课</h4><h4 id="1-6-课程资源"><a href="#1-6-课程资源" class="headerlink" title="1.6. 课程资源"></a>1.6. 课程资源</h4><p>coursea -&gt; disscusion </p>
+<hr>
+<h3 id="第二周-神经网络基础"><a href="#第二周-神经网络基础" class="headerlink" title="第二周 神经网络基础"></a>第二周 神经网络基础</h3><h4 id="2-1-二分分类"><a href="#2-1-二分分类" class="headerlink" title="2.1. 二分分类"></a>2.1. 二分分类</h4><p>m个样本的训练集，遍历这个训练集，</p>
+<p>正向过程/传播    forward pass/propagation</p>
+<p>反向过程/传播    backward pass/propagation</p>
+<p>计算机存储图像，用红绿蓝三个通道的矩阵表示。</p>
+<p><img src="assets/1616475094011.png" alt="1616475094011"></p>
+<p>在进行网络训练时，通常要unroll或者reshape为一维向量。</p>
+<p><img src="assets/1616475156017.png" alt="1616475156017"></p>
+<p>（x，y） 来表示一个单独的样本，x是n_x维的特征向量 $x \in \mathbb{R}^{n_x}$，y是标签值为 0 或 1</p>
+<p>共有m个样本 ：$(x^{(1)},y^{(1)}) , (x^{(2)},y^{(2)}), \dots, (x^{(m)},y^{(m)})$</p>
+<p>也可以用大写 $X$ 表示训练集</p>
+<p><img src="assets/equation-1617340213621.svg" alt="[公式]"></p>
+<p>m列表示m个样本，n_x行表示每个样本有n_x条特征，表示为 $X \in \mathbb{R}^{n_x \times m}$ 或者 <code>X.shape=(n_x,m)</code>，有时行列相反。</p>
+<p><img src="assets/equation-1617340240915.svg" alt="[公式]"></p>
+<p>m列表示m个样本，1行表示每个样本有1个输出标签，表示为 $Y \in \mathbb{R}^{1\times m}$ 或者 <code>Y.shape=(1,m)</code></p>
+<hr>
+<h4 id="2-2-logistic-回归"><a href="#2-2-logistic-回归" class="headerlink" title="2.2. logistic 回归"></a>2.2. logistic 回归</h4><p>给输入 $x$ 希望输出 $\hat{y}$ 判断是不是一副 cat picture。一般  $\hat{y}$ 是一个概率，当输入特征x满足一定的条件时，y就是1。</p>
+<script type="math/tex; mode=display">
+\hat{y} = P(y=1|x)</script><p>输入 $X \in \mathbb{R}^{n_x \times m}$ ，logistic 参数  $w \in \mathbb{R}^{n_x}$  , $b \in \mathbb{R}$ 是一个实数。</p>
+<script type="math/tex; mode=display">
+\hat{y} = w^Tx+b</script><p>可能是一个上述的线性函数，但可能性不大，因为输出概率在0到1之间。</p>
+<p>而 logistic 回归给一个 sigmoid 函数</p>
+<script type="math/tex; mode=display">
+\hat{y} = \sigma (w^Tx+b)</script><p><img src="assets/1616476097923.png" alt="1616476097923"></p>
+<p>输出为从 0 到 1 的光滑函数 $\sigma (z)$，其中在本例中 $z = w^Tx+b$</p>
+<script type="math/tex; mode=display">
+\sigma (z) = \frac{1}{1-e^{-z}}</script><p>如果 z 特别大，趋近于1；z 特别小，趋近于0。</p>
+<p>神经网络学习 w 和 b 两个参数，通常 b 对应一个 intercepter 拦截器</p>
+<hr>
+<h4 id="2-3-logistic-回归损失函数"><a href="#2-3-logistic-回归损失函数" class="headerlink" title="2.3. logistic 回归损失函数"></a>2.3. logistic 回归损失函数<span id="logistic"></span></h4><p>为了训练 w 和 b 两个参数，需要定义一个 loss function。给定输入$(x^{(1)},y^{(1)}) , (x^{(2)},y^{(2)}), \dots, (x^{(m)},y^{(m)})$ ，我们希望预测到的 $\hat{y}^{(i)} \approx  y^{(i)}$</p>
+<p>我们可以定义损失函数，衡量预测值与实际值的差距，用误差平方不利于梯度下降，因为会将问题变成<strong>非凸non-convex函数</strong>（w形状，有多个局部最小值）。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ \mathcal{L}(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2} 
+\end{equation}</script><p>换一种损失函数，<strong>凸convex函数</strong>（v形状，有一个全局最小值）。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ \mathcal{L}(\hat{y}, y)=-(y \log \hat{y}+(1-y) \log (1-\hat{y})) 
+\end{equation}</script><p>如果 y = 1 时， $\mathcal{L}(\hat{y}, y)=- \log \hat{y}$。损失函数越小越好，即 $\log \hat{y}$ 越大越好，这时 $ \hat{y}$ 要接近 y 的值 1</p>
+<p>如果 y = 0 时， $ \mathcal{L}(\hat{y}, y)= -\log (1-\hat{y})) $。损失函数越小越好， $\log (1-\hat{y}))$ 越大越好，这时 $ \hat{y}$ 要接近 y 的值 0</p>
+<p>loss函数衡量了<strong>单个</strong>训练样本的表现。cost 函数衡量<strong>全体</strong>训练样本的表现。</p>
+<script type="math/tex; mode=display">
+\begin{split}
+ J(w, b)&=\frac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{(i)}, y^{(i)}\right)\\&=-\frac{1}{m} \sum_{i=1}^{m}\left[y^{(i)} \log \hat{y}^{(i)}+\left(1-y^{(i)}\right) \log \left(1-\hat{y}^{(i)}\right)\right]
+\end{split}</script><p>即损失函数的平均值。</p>
+<blockquote>
+<p>凸优化问题是指 $\chi$ 是<strong>闭合的凸集</strong>且 $f$ 是 $\chi$ 上的<strong>凸函数</strong>的最优化问题，这两个条件任一不满足则该问题即为非凸的最优化问题。</p>
+<p><strong>为什么要求是凸函数呢？因为如果是下图这样的函数，则无法获得全局最优解。</strong></p>
+<p><img src="assets/20140107114211578.jpeg" alt="img"></p>
+<p><strong>为什么要求是凸集呢？因为如果可行域不是凸集，也会导致局部最优</strong></p>
+<p><img src="assets/20140107114309671.jpeg" alt="img"></p>
+</blockquote>
+<hr>
+<h4 id="2-4-梯度下降法"><a href="#2-4-梯度下降法" class="headerlink" title="2.4. 梯度下降法"></a>2.4. 梯度下降法</h4><p>gradient descent</p>
+<p>已知待训练sigmod函数： $ \hat{y}=\sigma\left(w^{T} x+b\right), \sigma(z)=\frac{1}{1+e^{-z}} $</p>
+<p>成本函数： </p>
+<script type="math/tex; mode=display">
+\begin{split} J(w, b)&=\frac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{(i)}, y^{(i)}\right)\\&=-\frac{1}{m} \sum_{i=1}^{m}\left[y^{(i)} \log \hat{y}^{(i)}+\left(1-y^{(i)}\right) \log \left(1-\hat{y}^{(i)}\right)\right]\end{split}</script><p>找到合适的 w 和 b 让成本函数较小。</p>
+<p><img src="assets/image-20210324213334658.png" alt="image-20210324213334658"></p>
+<p><strong>J(w,b) 是在水平轴 w 和 b 上的曲面，找到 J(w,b) 最小值对应的参数。</strong></p>
+<p>方法:</p>
+<p>用某个随即参数初始化一个点，朝最陡的方向走。</p>
+<p>重复执行$ \omega=\omega-\alpha \frac{dJ(\omega)}{d \omega} $，直到算法收敛。其中 $\alpha$ 为学习率，控制每次迭代中梯度下降的步长，$\frac{dJ(\omega)}{d \omega}$ 是参数的更新量或变化量。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">w = w - a * dw; <span class="comment">// dw = deltaJ / deltaw;  dw是此点的导数 此点函数的斜率</span></span><br><span class="line">b = b - a * db; <span class="comment">// db = deltaJ / deltab;  pytorch自动求导</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="2-5-导数"><a href="#2-5-导数" class="headerlink" title="2.5. 导数"></a>2.5. 导数</h4><p>derivatives</p>
+<p>slope斜率 = 绿色极限三角形的高除以宽 = 0.003/0.001 = 3</p>
+<p><img src="assets/1616478167609.png" alt="1616478167609"></p>
+<p>a1 = 2             f(a1) = 6</p>
+<p>a2 = 2.001     f(a2) = 6.003</p>
+<p>df = f(a2) - f(a1) / (a2 - a1) = 6.003 - 6 / (2.001 - 2) = 3</p>
+<p>这个函数任何地方的斜率都是 3。</p>
+<hr>
+<h4 id="2-6-更多导数的例子"><a href="#2-6-更多导数的例子" class="headerlink" title="2.6. 更多导数的例子"></a>2.6. 更多导数的例子</h4><p>也就是复杂函数求导</p>
+<hr>
+<h4 id="2-7-计算图"><a href="#2-7-计算图" class="headerlink" title="2.7. 计算图"></a>2.7. 计算图</h4><p>computation graph</p>
+<p>神经网络都是按照<strong>前向</strong>或者<strong>反向传播</strong>过程来实现的。</p>
+<p>首先计算出神经网络的输出，紧接着进行一个<strong>反向传输操作</strong>。后者用来计算出对应的梯度或者导数。</p>
+<p>$J(a,b,c) = 3(a + b <em> c)$ 是三个变量a,b,c的函数，我们可以设定 `u = b</em>c<code>，</code>v = a + u<code>，</code>J = 3*v`，则有下图</p>
+<p><img src="assets/image-20210324205340803.png" alt="image-20210324205340803"></p>
+<p>通过一个从左向右的过程，可以计算出 $J$ 的值。通过从右向左可以计算出导数。</p>
+<hr>
+<h4 id="2-8-计算图中的导数计算"><a href="#2-8-计算图中的导数计算" class="headerlink" title="2.8. 计算图中的导数计算"></a>2.8. 计算图中的导数计算</h4><p>按照上图计算，$J$ 对 $v$ 的导数，$\frac{dJ}{dv} = 3$。a的值改变，v的值就会改变，J的值也会改变。a改变，v改变量取决于 $\frac{dv}{da}$，</p>
+<p>链式法则 $\frac{dJ}{da} = \frac{dJ}{dv}  \frac{dv}{da}$，$\frac{dJ}{db} = \frac{dJ}{dv}  \frac{dv}{du} \frac{du}{db}$，$\frac{dJ}{dc} = \frac{dJ}{dv}  \frac{dv}{du} \frac{du}{dc}$</p>
+<hr>
+<h4 id="2-9-logistic回归中的梯度下降法"><a href="#2-9-logistic回归中的梯度下降法" class="headerlink" title="2.9. logistic回归中的梯度下降法"></a>2.9. logistic回归中的梯度下降法</h4><script type="math/tex; mode=display">
+z = w^Tx+b</script><script type="math/tex; mode=display">
+\hat{y} = a =\sigma (z)</script><script type="math/tex; mode=display">
+\mathcal{L}(\hat{y}, y)=-(y \log a+(1-y) \log (1-a))</script><p>a是 logistics 函数的输出，y 是标签真值。</p>
+<p>如果有两个特征 $x_1$ 和 $x_2$ 则</p>
+<script type="math/tex; mode=display">
+z = w_1^Tx_1+w_2^Tx_2 +b</script><p>在 logistic 回归中，我们需要做的是，<strong>变换参数</strong> w 和 b 来最小化损失函数，</p>
+<p><img src="assets/image-20210324211215820.png" alt="image-20210324211215820"></p>
+<p>其中</p>
+<script type="math/tex; mode=display">
+\frac{dL}{da} = -\frac{y}{a} + \frac{1-y}{1-a}</script><p>其中<span id="dz"></span></p>
+<script type="math/tex; mode=display">
+\begin{split}\frac{dL}{dz} &= \frac{dL}{da} \frac{da}{dz}\\&=(-\frac{y}{a} + \frac{1-y}{1-a}) * (a(1-a))\\&=a-y\end{split}</script><p>其中目标函数对三个参数的导数如下：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+\frac{dL}{dw_1} &= x_1*\frac{dL}{dz}\\
+\frac{dL}{dw_2} &= x_2*\frac{dL}{dz}\\
+\frac{dL}{db} &= \frac{dL}{dz}
+\end{split}</script><p>然后根据下式更新参数。</p>
+<script type="math/tex; mode=display">
+\begin{split}
+w_1 &= w_1 - \alpha \frac{dL}{dw_1}\\
+w_2 &= w_2 - \alpha \frac{dL}{dw_2}\\
+b &= b - \alpha \frac{dL}{db}
+\end{split}</script><hr>
+<h4 id="2-10-m个样本的梯度下降"><a href="#2-10-m个样本的梯度下降" class="headerlink" title="2.10. m个样本的梯度下降"></a>2.10. m个样本的梯度下降</h4><p>上一节均为单一样本的求导与参数更新。实际情况下，训练集会有很多样本。</p>
+<script type="math/tex; mode=display">
+\begin{split}
+ J(w, b)&=\frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)})\\&=-\frac{1}{m} \sum_{i=1}^{m}\left[y^{(i)} \log \hat{y}^{(i)}+(1-y^{(i)}) \log (1-\hat{y}^{(i)})\right]
+\end{split}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\hat{y}^{i} = a =\sigma (z^{i})=\sigma (w^Tx^{i}+b)</script><p>直接求导</p>
+<script type="math/tex; mode=display">
+\frac{\partial J(w, b)}{\partial w_1} = \frac{1}{m} \sum_{i=1}^{m}\frac{\partial L(\hat{y}^{(i)}, y^{(i)})}{\partial w_i}</script><p>计算每一个样本的梯度值，然后求平均，会得到全局梯度值，可以直接用到梯度下降法。</p>
+<p><img src="assets/image-20210324214705487.png" alt="image-20210324214705487"></p>
+<p>整个过程相当于一次epoch。每次将所有样本计算过一边后，梯度下降一次，更改参数。重复多次。</p>
+<p><strong>显式的使用循环，会使算法很低效。</strong>因此向量化编程有很大的帮助。</p>
+<hr>
+<h4 id="2-11-向量化"><a href="#2-11-向量化" class="headerlink" title="2.11. 向量化"></a>2.11. 向量化</h4><p>消除代码中显式for循环语句的艺术。<strong>不能使用显式for循环</strong>，numpy隐式循环。</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> time </span><br><span class="line"></span><br><span class="line"><span class="comment"># vectorization version</span></span><br><span class="line">a = np.randrom.rand(<span class="number">1000000</span>)</span><br><span class="line">b = np.randrom.rand(<span class="number">1000000</span>)</span><br><span class="line"></span><br><span class="line">tic = time.time()</span><br><span class="line">c = np.dot(a,b)</span><br><span class="line">toc = time.tiem()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Vectorized version:&quot;</span> + <span class="built_in">str</span>(<span class="number">1000</span>*(toc-tic)) + <span class="string">&quot;ms&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># for loop version</span></span><br><span class="line">c = <span class="number">0</span></span><br><span class="line">tic = time.time()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>)</span><br><span class="line">	c += a[i]*b[i]</span><br><span class="line">toc = time.time()   </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;For loop version:&quot;</span> + <span class="built_in">str</span>(<span class="number">1000</span>*(toc-tic)) + <span class="string">&quot;ms&quot;</span>)  <span class="comment"># 时间比向量化版本长</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>CPU 和 GPU 都有并行处理能力 <strong>SIMD 单指令多数据流</strong></p>
+<hr>
+<h4 id="2-12-向量化的更多例子"><a href="#2-12-向量化的更多例子" class="headerlink" title="2.12. 向量化的更多例子"></a>2.12. 向量化的更多例子</h4><p>计算</p>
+<script type="math/tex; mode=display">
+\begin{split}
+u &= Av\\
+u_i &= \sum_i\sum_jA_{ij}v_j
+\end{split}</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">u = np.zeros((n, <span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> i </span><br><span class="line">	<span class="keyword">for</span> j</span><br><span class="line">    	u[i] = A[i][j] * v[j]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">u = np.dot(A,v)       </span><br></pre></td></tr></table></figure>
+<p>计算</p>
+<script type="math/tex; mode=display">
+u_i = e^{v_i}</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">u = np.zeros((n, <span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)</span><br><span class="line">	u[i] = math.exp(v[i])</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">u = np.exp(v);</span><br><span class="line">np.log(v);</span><br><span class="line">np.<span class="built_in">abs</span>(v);</span><br><span class="line">np.maximun(v,<span class="number">0</span>) <span class="comment"># v中所有元素和0之间相比的最大值</span></span><br><span class="line">v**<span class="number">2</span>			<span class="comment">#v^2    </span></span><br><span class="line"><span class="number">1</span>/v     		<span class="comment">#v的倒数</span></span><br></pre></td></tr></table></figure>
+<p>Logistic 回归求导</p>
+<p><img src="assets/1616648854396.png" alt="1616648854396"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">J = <span class="number">0</span>, dw1 = <span class="number">0</span>, dw2 = <span class="number">0</span>, db = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span> to n:</span><br><span class="line">    z[i] = w^T * x[i] + b</span><br><span class="line">    a[i] = sigma(z[i])  <span class="comment">#sigma  1 / (1 + e^-x)</span></span><br><span class="line">    J += -[y[i] * log(yhat[i]) + (<span class="number">1</span> - y[i]) * log(<span class="number">1</span> - yhat[i])]</span><br><span class="line">    dz = a[i] * (<span class="number">1</span> - a[i])   <span class="comment"># dz = da/dz</span></span><br><span class="line">    dw1 = x1[i] * dz[i]</span><br><span class="line">    dw2 = x2[i] * dz[i]</span><br><span class="line">    db += dz[i]</span><br><span class="line">J = J / m</span><br><span class="line">dw1 = dw1 / m</span><br><span class="line">dw2 = dw2 / m</span><br><span class="line">db = db / m</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="2-13-向量化-logistics-回归"><a href="#2-13-向量化-logistics-回归" class="headerlink" title="2.13. 向量化 logistics 回归"></a>2.13. 向量化 logistics 回归</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">z = np.dot(w.t ,x) + b</span><br><span class="line">a = <span class="number">1</span> / np.exp(-z)</span><br></pre></td></tr></table></figure>
+<p>b 是一个实数，python会自动把实数b 扩展成一个<code>1*m</code> 的行向量</p>
+<hr>
+<h4 id="2-14-向量化-logistics-回归的梯度输出"><a href="#2-14-向量化-logistics-回归的梯度输出" class="headerlink" title="2.14. 向量化 logistics 回归的梯度输出"></a>2.14. 向量化 logistics 回归的梯度输出</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dz = a - y;   <span class="comment"># dz = dL/dz  不是   da/dz</span></span><br><span class="line">dw = np.<span class="built_in">sum</span>(np.dot(x, dz.t)) / m</span><br><span class="line">db = np.<span class="built_in">sum</span>(dz) / m</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 总向量化编程logistics回归</span></span><br><span class="line">z = np.dot(w.t ,x) + b</span><br><span class="line">a = <span class="number">1</span> / np.exp(-z)</span><br><span class="line">dz = a - y;   <span class="comment"># dz = dL/dz  不是   da/dz</span></span><br><span class="line">dw = np.<span class="built_in">sum</span>(np.dot(x, dz.t)) / m</span><br><span class="line">db = np.<span class="built_in">sum</span>(dz) / m</span><br><span class="line"></span><br><span class="line">w = w - alpha * dw</span><br><span class="line">b = b - alpha * db</span><br></pre></td></tr></table></figure>
+<p>仍然需要一个大 for 循环，实现每一次梯度更新，即eopch。</p>
+<hr>
+<h4 id="2-15-Python-中的广播"><a href="#2-15-Python-中的广播" class="headerlink" title="2.15. Python 中的广播"></a>2.15. Python 中的广播</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">A = np.array([<span class="number">56</span> , <span class="number">0</span> , <span class="number">4.4</span> , <span class="number">68</span>],</span><br><span class="line">            [<span class="number">1.2</span>, <span class="number">104</span>, <span class="number">52</span>, <span class="number">8</span>],</span><br><span class="line">            [<span class="number">1.8</span>, <span class="number">135</span>, <span class="number">99</span>, <span class="number">0.9</span>])</span><br><span class="line">cal = A.<span class="built_in">sum</span>(axis = <span class="number">0</span>) <span class="comment">#按列求和  按行求和axis = 1</span></span><br><span class="line">percentage = <span class="number">100</span> * A / cal.reshape(<span class="number">1</span>,<span class="number">4</span>)  <span class="comment">#A 3x4         cal 1x4 </span></span><br><span class="line"><span class="comment">#.reshape(1,4) 可以确保矩阵形状是我们想要的</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>广播（broadcasting）即<strong>同型复制</strong></p>
+<p><strong>general principle</strong></p>
+<p>size ：[m,n] +-*/ [1,n]  把 [1,n] 复制m行变成  [m,n]再和前项运算</p>
+<p>size ：[m,n] +-*/ [m,1] 把 [m,1]复制n列变成 [m,n] 再和前项</p>
+<hr>
+<h4 id="2-16-关于-python-numpy-向量的说明"><a href="#2-16-关于-python-numpy-向量的说明" class="headerlink" title="2.16. 关于 python/numpy 向量的说明"></a>2.16. 关于 python/numpy 向量的说明</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 避免使用秩为 1 的矩阵</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.random.randn(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">a.shape  <span class="comment">#(5, ) 秩为1的数组 </span></span><br><span class="line">np.dot(a, a.T)   <span class="comment"># 算出来是内积 一个数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 尽量不要使用秩为1的数组 即</span></span><br><span class="line">a = np.random.randn(<span class="number">5</span>) </span><br><span class="line"><span class="comment"># 改为</span></span><br><span class="line">a = np.random.randn(<span class="number">5</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">a.shape  <span class="comment">#(5, 1) 秩不为1的数组 </span></span><br><span class="line">np.dot(a, a.T)   <span class="comment"># 算出来是外积 一个矩阵</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用断言加以保障 执行很快 </span></span><br><span class="line"><span class="keyword">assert</span>(a.shape == (<span class="number">5</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#确保形状</span></span><br><span class="line">reshape</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="2-17-Jupyter-Ipython笔记本的快速指南"><a href="#2-17-Jupyter-Ipython笔记本的快速指南" class="headerlink" title="2.17. Jupyter/Ipython笔记本的快速指南"></a>2.17. Jupyter/Ipython笔记本的快速指南</h4><p>shift + enter 执行代码段</p>
+<p>kernel 重启内核</p>
+<p>submit assignment 提交任务</p>
+<hr>
+<h4 id="2-18-logistic-损失函数的解释"><a href="#2-18-logistic-损失函数的解释" class="headerlink" title="2.18 logistic 损失函数的解释"></a>2.18 logistic 损失函数的<a href="#logistic">解释</a></h4><script type="math/tex; mode=display">
+\hat{y} = \sigma (w^Tx+b)</script><script type="math/tex; mode=display">
+\sigma (z) = \frac{1}{1-e^{-z}}</script><p>我们设定</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ \hat{y}=P(y=1 \mid x) 
+\end{equation}</script><p>即算法的输出 $\hat{y}$ 是给定训练样本 x 条件下 y 等于 1 的概率。</p>
+<p>换句话说，如果 y=1，那么在给定 x 得到 y=1的概率等于 $\hat{y}$ </p>
+<p>反过来说，如果 y=0，那么在给定 x 得到 y=0 的概率等于$1-\hat{y}$</p>
+<p>下边有验证。</p>
+<p>简单说  $\hat{y}$ 表示 y=1的概率。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+if \quad y=1: \quad p(y \mid x)=\hat{y} \\
+if \quad y=0: \quad p(y \mid x)=1-\hat{y} 
+\end{equation}</script><p>二分类问题，y的取值只能是0或1。</p>
+<p>0-1分布/二项分布/伯努利分布，上述两条公式可以合并成</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ p(y \mid x)=\hat{y}^{y}(1-\hat{y})^{(1-y)} 
+\end{equation}</script><p>当 y = 1或 y = 0 代入上式可以得到上上式的结论。</p>
+<p>两边同时取<strong>对数</strong>，方便<strong>展开</strong>/<strong>求导/优化</strong>。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ \log p\left(\left.y\right|x\right)=\log \hat{y}^{y}(1-\hat{y})^{(1-y)}=y \log \hat{y}+(1-y) \log (1-\hat{y}) 
+\end{equation}</script><p>概率为1时，log函数为0，概率为0时，log函数为负无穷。</p>
+<p>假设所有样本<strong>独立同分布</strong></p>
+<script type="math/tex; mode=display">
+\begin{equation}
+P= \prod_{i=1}^{m} p\left(y^{(i)} \mid x^{(i)}\right) 
+\end{equation}</script><p>由于各个样本<strong>独立</strong>，因此求得<strong>全局最优</strong>的条件便是求得<strong>各样本最优</strong>，也即各个样本取得<strong>最优的概率的连乘</strong></p>
+<p>两边同时取<strong>对数</strong>，方便<strong>展开</strong>/<strong>求导/优化</strong>。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\log P= \sum_{i=1}^{m} \log p\left(y^{(i)} \mid x^{(i)}\right) 
+\end{equation}</script><p>最大似然估计，即求出一组参数，这里就是w和b，使这个式子取最大值。</p>
+<p>也就是说这个式子最大值，$\hat{y}$ 和 $y$ 越接近，网络越好。</p>
+<hr>
+<h3 id="第三周-浅层神经网络"><a href="#第三周-浅层神经网络" class="headerlink" title="第三周 浅层神经网络"></a>第三周 浅层神经网络</h3><h4 id="3-1-神经网络概览"><a href="#3-1-神经网络概览" class="headerlink" title="3.1. 神经网络概览"></a>3.1. 神经网络概览</h4><p>右上角方括号内表示网络的层数</p>
+<p>右上角圆括号表示第几个训练样本</p>
+<p>右下角表示特征索引</p>
+<p><img src="assets/1616728252104.png" alt="1616728252104"></p>
+<p>这是一个简单的两层神经网络的计算过程，第一层得到的概率 $a^{[1]}$ ，又被输入到下一层，再次进行学习，第二层得到的概率为最终输出 $a^{[2]}$，并进一步计算 loss</p>
+<hr>
+<h4 id="3-2-神经网络表示"><a href="#3-2-神经网络表示" class="headerlink" title="3.2. 神经网络表示"></a>3.2. 神经网络表示</h4><p>下图为双层神经网络，输入层不算在内。 </p>
+<p><img src="assets/1616728799846.png" alt="1616728799846"></p>
+<p>左边一层称为输入层，第二层称为隐藏层，第三层只有一个节点，称为输出层。在训练时，隐藏层节点的值，不知道。</p>
+<p>$X$ 或 $a^{[0]}$表示输入。第二层为 $a^{[1]}$ 是一个四维向量。输出为 $a^{[2]}$。</p>
+<p>隐藏层有两个相关的参数 W 和 b，W 是（4，3）的矩阵，有三个输入，b 是（4，1）的矩阵。</p>
+<p>输出层有两个相关的参数 W 和 b，W 是（1，4）的矩阵，有四个隐藏层单元，b 是（1，4）的矩阵。</p>
+<hr>
+<h4 id="3-3-计算神经网络的输出"><a href="#3-3-计算神经网络的输出" class="headerlink" title="3.3. 计算神经网络的输出"></a>3.3. 计算神经网络的输出</h4><p><img src="assets/1616729421965.png" alt="1616729421965"></p>
+<p>这个圆圈代表了回归计算的两个步骤，首先按照步骤计算出z，然后在第二步计算激活函数。神经网络就是不断重复这个过程</p>
+<p><img src="assets/1616729548101.png" alt="1616729548101"></p>
+<p><strong>第一隐藏层的第一个</strong>节点先计算</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ z_{1}^{[1]}=\omega_{1}^{[1]} x+b_{1}^{[1]} 
+\end{equation}</script><p>再计算</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ a_{1}^{[1]}=\sigma(z_{1}^{[1]}) 
+\end{equation}</script><p>上标表示层数，下标表示节点索引（1-4）</p>
+<p><img src="assets/1616729708292.png" alt="1616729708292"></p>
+<p><strong>第一隐藏层的第二个</strong>节点先计算</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ z_{2}^{[1]}=\omega_{2}^{[1]} x+b_{2}^{[1]} 
+\end{equation}</script><p>再计算</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+ a_{2}^{[1]}=\sigma(z_{2}^{[1]}) 
+\end{equation}</script><p>如下图</p>
+<p><img src="assets/1616729799515.png" alt="1616729799515"></p>
+<script type="math/tex; mode=display">
+\begin{split}
+z_{1}^{[1]}=\omega_{1}^{[1]T} x+b_{1}^{[1]}, a_{1}^{[1]}=\sigma(z_{1}^{[1]}) \\
+z_{2}^{[1]}=\omega_{2}^{[1]T} x+b_{2}^{[1]}, a_{2}^{[1]}=\sigma(z_{2}^{[1]}) \\
+z_{3}^{[1]}=\omega_{3}^{[1]T} x+b_{3}^{[1]}, a_{3}^{[1]}=\sigma(z_{3}^{[1]}) \\
+z_{4}^{[1]}=\omega_{4}^{[1]T} x+b_{4}^{[1]}, a_{4}^{[1]}=\sigma(z_{4}^{[1]}) \\
+\end{split}</script><p>矩阵化</p>
+<p><img src="assets/1616731945222.png" alt="1616731945222"></p>
+<p>上述输出为 $z^{[1]}$ 第一层的输出向量</p>
+<p>给定输入 x</p>
+<script type="math/tex; mode=display">
+\begin{split}
+z^{[1]}&=W^{[1]} x+b^{[1]} \\
+a^{[1]}&=\sigma(z^{[1]}) \\
+\end{split}</script><p>(4,1) = (4,3) * (3,1) + (4,1)               W 是四个不同的节点，对三个输入的权重</p>
+<p>(4,1) = (4,1)</p>
+<script type="math/tex; mode=display">
+\begin{split}
+z^{[2]}&=W^{[2]} a^{[1]}+b^{[2]} \\
+a^{[2]}&=\sigma(z^{[2]}) 
+\end{split}</script><p>(1,1) = (1,4) * (4,1) + (1,1)</p>
+<p>(1,1) = (1,1)</p>
+<hr>
+<h4 id="3-4-多个例子中的向量化"><a href="#3-4-多个例子中的向量化" class="headerlink" title="3.4. 多个例子中的向量化"></a>3.4. 多个例子中的向量化</h4><p> 样本的循环正向反向，权重是同一套。m个样本</p>
+<p><img src="assets/1616732735832.png" alt="1616732735832"></p>
+<p>  全部变成矩阵运算。</p>
+<p><img src="assets/equation-1617340426834.svg" alt="[公式]"></p>
+<p><img src="assets/equation-1617340433434.svg" alt="[公式]"></p>
+<p><img src="assets/equation-1617340436976.svg" alt="[公式]"></p>
+<hr>
+<h4 id="3-5-向量化实现的解释"><a href="#3-5-向量化实现的解释" class="headerlink" title="3.5. 向量化实现的解释"></a>3.5. 向量化实现的解释</h4><p> 以样本数目直接扩展为矩阵</p>
+<p><img src="assets/equation-1617340602054.svg" alt="[公式]"></p>
+<p><img src="assets/equation-1617340606506.svg" alt="[公式]"></p>
+<p><img src="assets/equation-1617340610258.svg" alt="[公式]"></p>
+<p><img src="assets/equation-1617340684960.svg" alt="[公式]"></p>
+<hr>
+<h4 id="3-6-激活函数"><a href="#3-6-激活函数" class="headerlink" title="3.6. 激活函数"></a>3.6. 激活函数</h4><p><img src="assets/image-20220325173040770.png" alt="image-20220325173040770"></p>
+<p><img src="assets/image-20220325173054231.png" alt="image-20220325173054231"></p>
+<p>tanh 函数比 sigmoid 函数激活非线性效果好一些，因为值介于-1和1之间，激活函数的均值为 0。类似数据中心化的效果。</p>
+<p>但是 tanh 一般<strong>不在输出层使用</strong>，因为有时输出为概率，概率在 0 - 1 之间。如果做二分类问题，可以试着用 sigmoid 函数。</p>
+<p>tanh 和 sigmoid 在 z 很大或很小时，函数的斜率很接近 0，会拖慢梯度下降。</p>
+<p><img src="assets/image-20220325173244818.png" alt="image-20220325173244818"></p>
+<p>relu 在 z 为正数时，导数为 1，负数时为 0。</p>
+<p>sigmoid 二元分类用，其余不用</p>
+<p>tanh 可以替代sigmoid</p>
+<p>relu  最常用</p>
+<p>leaky relu</p>
+<p><img src="assets/image-20220325173254167.png" alt="image-20220325173254167"></p>
+<p>Relu 的输入值为负的时候，输出始终为0，其一阶导数也始终为0，这样会导致神经元不能更新参数，也就是神经元不学习了，这种现象叫做“Dead Neuron”。<strong>失活</strong>。为了解决 Relu 函数这个缺点，在 Relu 函数的负半区间引入一个泄露（Leaky）值。</p>
+<p>实际选择激活函数可以在交叉验证集上做个小实验。</p>
+<p><img src="assets/image-20220325173301855.png" alt="image-20220325173301855"></p>
+<p><img src="assets/image-20220325173312749.png" alt="image-20220325173312749"></p>
+<blockquote>
+<p>激活函数（Activation Function）是一种添加到人工神经网络中的函数，旨在帮助网络学习数据中的复杂模式。类似于人类大脑中基于神经元的模型，激活函数最终决定了要发射给下一个神经元的内容。</p>
+</blockquote>
+<hr>
+<h4 id="3-7-为什么需要非线性激活函数？"><a href="#3-7-为什么需要非线性激活函数？" class="headerlink" title="3.7. 为什么需要非线性激活函数？"></a>3.7. 为什么需要非线性激活函数？</h4><p>如果没有激活函数，就只是一个线性组合。</p>
+<hr>
+<h4 id="3-8-激活函数的导数"><a href="#3-8-激活函数的导数" class="headerlink" title="3.8. 激活函数的导数"></a>3.8. 激活函数的导数</h4><p><strong>sigmoid 函数</strong></p>
+<p><img src="assets/image-20210327213042173.png" alt="image-20210327213042173"></p>
+<script type="math/tex; mode=display">
+g(z)=\frac{1}{1+e^{-z}}</script><p>求导</p>
+<script type="math/tex; mode=display">
+g^{\prime}(z) = \frac{d}{d z} g(z) = g(z)(1-g(z))</script><p>z 特别大 g(z) = 1 梯度为0</p>
+<p>z 特别小 g(z) = 0 梯度为0</p>
+<p>z = 0    g(z) = 0.5  梯度为0.25</p>
+<p><strong>tanh 函数</strong></p>
+<p><img src="assets/image-20210327213229741.png" alt="image-20210327213229741"></p>
+<script type="math/tex; mode=display">
+g(z) = \frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}</script><p>求导</p>
+<script type="math/tex; mode=display">
+g^{\prime}(z) = \frac{d}{d z} g(z) = 1-g(z)^2</script><p>z 特别大 g(z) = 1  梯度为0</p>
+<p>z 特别小 g(z) = -1 梯度为0</p>
+<p>z = 0       g(z) = 0  梯度为1</p>
+<p><strong>ReLU函数</strong></p>
+<p><img src="assets/image-20210327213340105.png" alt="image-20210327213340105"></p>
+<script type="math/tex; mode=display">
+g(z) = max(0, z)</script><p>求导</p>
+<script type="math/tex; mode=display">
+g^{\prime}(z)=\left\{\begin{array}{ll}
+0 & \text { if } z<0 \\
+1 & \text { if } z \geqslant 0
+\end{array}\right.</script><p><strong>Leaky ReLU函数</strong></p>
+<p><img src="assets/image-20210327213540069.png" alt="image-20210327213540069"></p>
+<script type="math/tex; mode=display">
+g(z) = max(0.01z, z)</script><p>求导</p>
+<script type="math/tex; mode=display">
+g^{\prime}(z)=\left\{\begin{array}{ll}
+0.01 & \text { if } z<0 \\
+1 & \text { if } z \geqslant 0
+\end{array}\right.</script><hr>
+<h4 id="3-9-神经网络的梯度下降法"><a href="#3-9-神经网络的梯度下降法" class="headerlink" title="3.9. 神经网络的梯度下降法"></a>3.9. 神经网络的梯度下降法</h4><p>待训练参数：$w^{[1]}, b^{[1]}, w^{[2]}, b^{[2]}$，    有隐藏单元： $n^{[0]}, n^{[1]}, n^{[2]}$</p>
+<p>矩阵 $w^{[1]}$ 维度为 $(n^{[1]}, n^{[0]})$，$b^{[1]}$ 就是一个 $(n^{[1]},1)$ 维的向量，$w^{[2]}$ 维度为 $(n^{[2]}, n^{[1]})$，$b^{[2]}$ 就是一个 $(n^{[2]},1)$ 维的向量。</p>
+<p>cost 函数为：</p>
+<script type="math/tex; mode=display">
+J\left(\omega^{[1]}, b^{(1)}, \omega^{[2]}, b^{[2]}\right)=\frac{1}{m} \sum_{i=1}^{n}\mathcal{L}(\hat{y}, y)</script><p>其中 $\hat{y}=a^{[2]}$ 是网络输出。</p>
+<p>梯度下降过程：</p>
+<p>​    重复：   $d\omega ^{[1]}=\frac{\partial J}{\partial \omega^{[1]}}$，$db^{[1]}=\frac{\partial J}{\partial b^{[1]}}$</p>
+<p>​                   $\omega^{[1]}=\omega^{[1]}-\alpha d\omega^{[1]}$，$b^{[1]}=b^{[1]}-\alpha db^{[1]}$，$\omega^{[2]}=\omega^{[2]}-\alpha d\omega^{[2]}$，$b^{[2]}=b^{[2]}-\alpha db^{[2]}$</p>
+<p><strong>正向传播</strong></p>
+<script type="math/tex; mode=display">
+\begin{split}
+Z^{[1]}&=W^{[1]} x+b^{[1]} \\
+A^{[1]}&=g^{[1]}(Z^{[1]}) \\
+Z^{[2]}&=W^{[2]} A^{[1]}+b^{[2]} \\
+A^{[2]}&=g^{[2]}(Z^{[2]}) 
+\end{split}</script><p><strong>反向传播</strong></p>
+<script type="math/tex; mode=display">
+\begin{split}
+dZ^{[2]} &= A^{[2]} - Y_{truth}\\
+dW^{[2]} &= \frac{1}{m}dZ^{[2]}A^{[1]T}\\
+db^{[2]} &= \frac{1}{m}np.sum(dZ^{[2]}, axis=1, keepdims=True)\\
+dZ^{[1]} &= W^{[2]T}dZ^{[2]} * g^{[1]\prime}(Z^{[1]})\\
+dW^{[1]} &= \frac{1}{m}dZ^{[1]}X^{T}\\
+db^{[1]} &= \frac{1}{m}np.sum(dZ^{[1]}, axis=1, keepdims=True)\\
+\end{split}</script><p>第一行推导过程公式见<a href="#dz">dZ</a> ，这里假设使用sigmoid激活函数，直接转化为最终式子，所以没有 $g^{[2]\prime}$。</p>
+<p>第二行直接求导结果为系数，$\frac{1}{m}$ 因为是直接对cost function求导，所以要除以m</p>
+<p>第三行 <code>axis=1</code> 水平相加求和，<code>keepdims</code> 防止 python 输出秩为 1 的数组$(n^{[2]},)    $       $(n^{[2]},1)$</p>
+<p>第四行 $g^{[1]\prime}$是隐藏层的激活函数的导数。*为逐个元素相乘，点乘。$W^{[2]T}dZ^{[2]}$ 的size $(n^{[1]},m)$</p>
+<script type="math/tex; mode=display">
+dZ^{[1]} = \frac{\part \mathcal{L}}{\part Z^{[1]}}=\frac{\part \mathcal{L}}{\part Z^{[2]}}\frac{\part Z^{[2]}}{\part A^{[1]}} \frac{\part A^{[1]}}{\part Z^{[1]}}\\=W^{[2]T}dZ^{[2]} *g^{[1]\prime}(Z^{[1]})</script><p><del>为什么是 $dZ^{[2]}$ ???????????????????????????????????????????</del> <span id="dz"></span></p>
+<p>答案的$W^{[2]T}dZ^{[2]}$ 与上边偏导对应的位置刚好相反</p>
+<p>第五行 $db^{[1]}$ 的size $(n^{[1]},1)$</p>
+<p><strong>上边的公式解释见下节</strong></p>
+<hr>
+<h4 id="3-10-直观理解反向传播"><a href="#3-10-直观理解反向传播" class="headerlink" title="3.10. 直观理解反向传播"></a>3.10. 直观理解反向传播</h4><p>任意变量与其导数维度相同</p>
+<script type="math/tex; mode=display">
+\begin{split}
+dz^{[2]} &= a^{[2]} - y\\
+dW^{[2]} &= \frac{1}{m}dz^{[2]}a^{[1]T}\\
+db^{[2]} &= dz^{[2]}\\
+dz^{[1]} &= W^{[2]T}dz^{[2]} * g^{[1]\prime}(z^{[1]})\\
+dW^{[1]} &= \frac{1}{m}dz^{[1]}x^{T}\\
+db^{[1]} &= dz^{[1]}\\
+\end{split}</script><p>向量化</p>
+<script type="math/tex; mode=display">
+\begin{split}
+dZ^{[2]} &= A^{[2]} - Y_{truth}\\
+dW^{[2]} &= \frac{1}{m}dZ^{[2]}A^{[1]T}\\
+db^{[2]} &= \frac{1}{m}np.sum(dZ^{[2]}, axis=1, keepdims=True)\\
+dZ^{[1]} &= W^{[2]T}dZ^{[2]} * g^{[1]\prime}(Z^{[1]})\\
+dW^{[1]} &= \frac{1}{m}dZ^{[1]}X^{T}\\
+db^{[1]} &= \frac{1}{m}np.sum(dZ^{[1]}, axis=1, keepdims=True)\\
+\end{split}</script><hr>
+<h4 id="3-11-随机初始化"><a href="#3-11-随机初始化" class="headerlink" title="3.11. 随机初始化"></a>3.11. 随机初始化</h4><p>权重不能初始化为0。偏置可以初始化为0。若初始化为 0 输入不同的样本，计算过程相同，得到相同的结果和梯度。</p>
+<p>神经元对称 symmetric</p>
+<p><img src="assets/image-20210327232838851.png" alt="image-20210327232838851"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W1 = np.random.randn((<span class="number">2</span>, <span class="number">2</span>)) * <span class="number">0.01</span> <span class="comment">#</span></span><br><span class="line">b1 = np.zeros((<span class="number">2</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">W2 = np.random.randn((<span class="number">1</span>, <span class="number">2</span>)) * <span class="number">0.01</span></span><br><span class="line">b2 = np.zeros((<span class="number">2</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>w 初始化为很小的数。b 不受影响。</p>
+<p>一般初始化为较小的值，如果初始化较大，使用tanh和sigmoid激活函数时，梯度接近 0。</p>
+<p>如果没有tanh和sigmoid激活函数时，初始化大小无所谓</p>
+<p>如果网络比较深选用0.01外的初始化倍数</p>
+<hr>
+<h3 id="第四周-深层神经网络"><a href="#第四周-深层神经网络" class="headerlink" title="第四周 深层神经网络"></a>第四周 深层神经网络</h3><h4 id="4-1-深层神经网络"><a href="#4-1-深层神经网络" class="headerlink" title="4.1 深层神经网络"></a>4.1 深层神经网络</h4><p><img src="assets/1616917392656.png" alt="1616917392656"></p>
+<p><img src="assets/1616920793507.png" alt="1616920793507"></p>
+<p>L 表示神经网络的层数</p>
+<p>$n^{[L]}$ 表示L层的隐藏单元的数目</p>
+<p>$n^{[1]} = 5$，$n^{[2]} = 5$，$n^{[3]} = 3$，输入层 $n^{[0]} = 3$</p>
+<hr>
+<h4 id="4-2-深层网络中的前向传播"><a href="#4-2-深层网络中的前向传播" class="headerlink" title="4.2 深层网络中的前向传播"></a>4.2 深层网络中的前向传播</h4><p>四层公式如下：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+Z^{[1]}&=W^{[1]} x+b^{[1]} \\
+a^{[1]}&=g^{[1]}(Z^{[1]}) \\
+Z^{[2]}&=W^{[2]} a^{[1]}+b^{[2]} \\
+a^{[2]}&=g^{[2]}(Z^{[2]}) \\
+Z^{[3]}&=W^{[3]} a^{[2]}+b^{[3]} \\
+a^{[3]}&=g^{[3]}(Z^{[3]}) \\
+Z^{[4]}&=W^{[4]} a^{[3]}+b^{[4]} \\
+a^{[4]}&=g^{[4]}(Z^{[4]}) \\
+\end{split}</script><p>通用公式如下：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+Z^{[L]} &= W^{[L]}a^{[L-1]}+b^{[L-1]}\\
+a^{[L]} &= g^{[L]}(Z^{[L]}) \\
+\end{split}</script><hr>
+<h4 id="4-3-核对矩阵的维数"><a href="#4-3-核对矩阵的维数" class="headerlink" title="4.3 核对矩阵的维数"></a>4.3 核对矩阵的维数</h4><p>检查网络的bug，按照算法流程逐行检查矩阵维度。</p>
+<p>归纳演绎法：从特殊到一般；从一个到整体；从一个实数到一组向量；从一组向量到一个矩阵。</p>
+<p><img src="assets/1616926229300.png" alt="1616926229300"></p>
+<p><strong>单个样本</strong>的维度变化：</p>
+<p>$Z^{[1]}=W^{[1]} A^{[0]}+b^{[1]}$ ，$n^{[1]} = 3$，W的size为 （3，2）； $A^{[0]}=X$的size为（2，1）；b的size为（3，1）；Z的size为（3，1）</p>
+<p>$A^{[1]} = g^{[1]}(Z^{[1]})$，Z的size为 （3，1）； A的size为（3，1）</p>
+<p>$Z^{[2]}=W^{[2]} A^{[1]}+b^{[2]}$ ，$n^{[1]} = 3$，W的size为 （5，3）； X的size为（3，1）；b的size为（3，1）；Z的size为（5，1）</p>
+<p>$A^{[2]} = g^{[2]}(Z^{[2]})$，Z的size为 （5，1）； A的size为（5，1）</p>
+<p>$Z^{[3]}=W^{[3]} A^{[2]}+b^{[3]}$ ，$n^{[1]} = 3$，W的size为 （4，5）； X的size为（5，1）；b的size为（4，1）；Z的size为（4，1）</p>
+<p>$A^{[3]} = g^{[3]}(Z^{[3]})$，Z的size为 （4，1）； A的size为（4，1）</p>
+<p>$Z^{[4]}=W^{[4]} A^{[3]}+b^{[4]}$ ，$n^{[1]} = 3$，W的size为 （2，4）； X的size为（4，1）；b的size为（2，1）；Z的size为（2，1）</p>
+<p>$A^{[4]} = g^{[4]}(Z^{[4]})$，Z的size为 （2，1）； A的size为（2，1）</p>
+<p>$Z^{[5]}=W^{[5]} A^{[4]}+b^{[5]}$ ，$n^{[1]} = 3$，W的size为 （1，2）； X的size为（2，1）；b的size为（1，1）；Z的size为（1，1）</p>
+<p>$A^{[5]} = g^{[5]}(Z^{[5]})$，Z的size为 （1，1）； A的size为（1，1）</p>
+<p><strong>使用下边两个公式检查</strong></p>
+<p>W/dW的size为（$n^{[L]},n^{[L-1]}$），b/db的size为（$n^{[L]},1$）</p>
+<p>z/dz的size为（$n^{[L]},1$），x/dx的size为（$n^{[L]},1$）</p>
+<hr>
+<p><img src="assets/1616926229300.png" alt="1616926229300"></p>
+<p><strong>多m个样本</strong>的维度变化，即经过向量化后：</p>
+<p>$Z^{[1]}=W^{[1]} A^{[0]}+b^{[1]}$ ，$n^{[1]} = 3$，W的size为 （3，2）； $A^{[0]}=X$的size为（2，m）；b的size为（3，m）；Z的size为（3，m）</p>
+<p>$A^{[1]} = g^{[1]}(Z^{[1]})$，Z的size为 （3，m）； A的size为（3，m）</p>
+<p>$Z^{[2]}=W^{[2]} A^{[1]}+b^{[2]}$ ，$n^{[1]} = 3$，W的size为 （5，3）； X的size为（3，m）；b的size为（3，m）；Z的size为（5，m）</p>
+<p>$A^{[2]} = g^{[2]}(Z^{[2]})$，Z的size为 （5，m）； A的size为（5，m）</p>
+<p>$Z^{[3]}=W^{[3]} A^{[2]}+b^{[3]}$ ，$n^{[1]} = 3$，W的size为 （4，5）； X的size为（5，m）；b的size为（4，m）；Z的size为（4，m）</p>
+<p>$A^{[3]} = g^{[3]}(Z^{[3]})$，Z的size为 （4，m）； A的size为（4，m）</p>
+<p>$Z^{[4]}=W^{[4]} A^{[3]}+b^{[4]}$ ，$n^{[1]} = 3$，W的size为 （2，4）； X的size为（4，m）；b的size为（2，m）；Z的size为（2，m）</p>
+<p>$A^{[4]} = g^{[4]}(Z^{[4]})$，Z的size为 （2，m）； A的size为（2，m）</p>
+<p>$Z^{[5]}=W^{[5]} A^{[4]}+b^{[5]}$ ，$n^{[1]} = 3$，W的size为 （1，2）； X的size为（2，m）；b的size为（1，m）；Z的size为（1，m）</p>
+<p>$A^{[5]} = g^{[5]}(Z^{[5]})$，Z的size为 （1，m）； A的size为（1，m）</p>
+<p><strong>使用下边两个公式检查</strong></p>
+<p>W/dW的size为（$n^{[L]},n^{[L-1]}$），b/db的size为（$n^{[L]},m$），其中b使用python广播机制，每列相等</p>
+<p>Z/dZ的size为（$n^{[L]},m$），X/dX的size为（$n^{[L]},m$）</p>
+<hr>
+<h4 id="4-4-为什么使用深层表示"><a href="#4-4-为什么使用深层表示" class="headerlink" title="4.4 为什么使用深层表示"></a>4.4 为什么使用深层表示</h4><p><img src="assets/1616927679151.png" alt="1616927679151"></p>
+<p>网络第一层，当成一个边缘检测器/特征检测器。隐藏单元就是下边的20ge小方块，第一个小方块会找垂直方向的边缘线，第19个会找水平方向的边缘线。找输入照片的各个边缘。</p>
+<p>第二层，把被检测到的边缘组合成面部的不同部分。比如：一个神经元会去找眼睛的部分，另一个神经元会去找鼻子的部分 。然后把这许多的边缘结合在一起，就可以开始检测人脸的不同部分。</p>
+<p>第三层，把这些部分放在一起，就可以识别或检测不同的人脸。</p>
+<p><strong>语音识别实例：</strong></p>
+<p>第一层，探测比较低层次的音频波形的一些特征（低频、高频、音调）</p>
+<p>第二层，然后把特征组合成一个单元，去探测声音的基本单元（音位）</p>
+<p>第三层，组合音位，识别单词</p>
+<p>第四层，组合单词，识别词组/语句</p>
+<p><strong>解释</strong></p>
+<p>前几层，学习低层次的简单特征，可以理解为探测简单的函数，比如边缘。后几层，把简单的特征结合在一起，就能学习更多复杂的函数。</p>
+<p><strong>circuit theory 电路理论</strong></p>
+<p>浅层网络需要指数级的隐藏单元才能像一些函数 与或非门一样计算。</p>
+<p>可以先用浅层做实验，然后逐步加深。</p>
+<hr>
+<h4 id="4-5-搭建深层神经网络块"><a href="#4-5-搭建深层神经网络块" class="headerlink" title="4.5 搭建深层神经网络块"></a>4.5 搭建深层神经网络块</h4><p><img src="assets/v2-6a0a7d63578db464b6fc539ef7e883d6_b.jpg" alt="img"></p>
+<p>第一行是正向传播</p>
+<p>第二行是反向传播 （需要缓存正向传播过程中 z 的值来计算梯度）</p>
+<p><img src="assets/v2-f8839ba29ecee2ecddee04bbe0780825_b.jpg" alt="img"></p>
+<p>根据反向传播过程中每层计算出的梯度，更新参数</p>
+<hr>
+<h4 id="4-6-前向和反向传播"><a href="#4-6-前向和反向传播" class="headerlink" title="4.6 前向和反向传播"></a>4.6 前向和反向传播</h4><p><strong>正向传播</strong></p>
+<p>输入 $a^{[L-1]}$</p>
+<p>输出 $a^{[L]}$，缓存 $cache(z^{[L]})$</p>
+<p>循环：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+Z^{[L]}&=W^{[L]} A^{[L-1]}+b^{[L]} \\
+a^{[L]}&=g^{[L]}(Z^{[L]}) 
+\end{split}</script><p><strong>反向传播</strong></p>
+<p>输入 $da^{[L]}$</p>
+<p>提取缓存 $cache(z^{[L]})$</p>
+<p>输出 $da^{[L-1]}，dW^{[L-1]}，db^{[L-1]}$       </p>
+<p>循环：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+dz^{[L]}&=da^{[L]} * g^{[L]\prime}(z^{[L]}) \\
+dW^{[L]}&=dz^{[L]}a^{[L-1]T    } \\
+db^{[L]}&=dz^{[L]} \\
+da^{[L-1]}&=W^{[L]T}dz^{[L]}\\
+dz^{[L]}&=W^{[L+1]T}dz^{[L+1]} * g^{[L]\prime}(z^{[L]}) \\
+\end{split}</script><p>这里的导数是损失函数 L 对参数求导，第五行是dz的另一种表示，*表示逐点相乘。</p>
+<script type="math/tex; mode=display">
+\begin{split}
+dZ^{[L]}&=dA^{[L]} * g^{[L]\prime}(Z^{[L]}) \\
+dW^{[L]}&=\frac{1}{m}dZ^{[L]}A^{[L-1]T    } \\
+db^{[L]}&=\frac{1}{m}np.sum(dZ^{[L]},axis=1,keepdims=True) \\
+dA^{[L-1]}&=W^{[L]T}dz^{[L]}
+\end{split}</script><p>上式为<strong>向量化</strong>后，其中 $dA^{[L]}$ 是矩阵</p>
+<hr>
+<h4 id="4-7-参数-VS-超参数"><a href="#4-7-参数-VS-超参数" class="headerlink" title="4.7 参数 VS 超参数"></a>4.7 参数 VS 超参数</h4><p>参数：$W^{[1]},b^{[1]},W^{[2]},b^{[2]},W^{[3]},b^{[3]},\dots$</p>
+<p>超参数： 学习率$\alpha$，迭代次数，隐藏层数$L$，隐藏单元$n^{[1]},n^{[2]},\dots$，激活函数</p>
+<p>​              momentum，mini batch_size，正则化参数</p>
+<p><strong>超参数确定控制了参数的值</strong>。</p>
+<p>必须通过训练/交叉验证，试试各种参数。看那个loss下降又小又快</p>
+<hr>
+<h4 id="4-8-这和大脑有什么关系？"><a href="#4-8-这和大脑有什么关系？" class="headerlink" title="4.8 这和大脑有什么关系？"></a>4.8 这和大脑有什么关系？</h4><hr>
+<h3 id="第五周-人工智能行业大师访谈"><a href="#第五周-人工智能行业大师访谈" class="headerlink" title="第五周 人工智能行业大师访谈"></a>第五周 人工智能行业大师访谈</h3><h4 id="5-1-吴恩达采访-Geoffrey-Hinton"><a href="#5-1-吴恩达采访-Geoffrey-Hinton" class="headerlink" title="5.1. 吴恩达采访 Geoffrey Hinton"></a>5.1. 吴恩达采访 Geoffrey Hinton</h4><p>Geoffrey Hinton                          推动反向传播/波尔兹曼机</p>
+<p>Yann LeCun（Hinton的学生）     </p>
+<p>Yoshua Bengio                            推动RNN</p>
+<p>AlexNet</p>
+<p>全息图 hologram</p>
+<p>Relu 等同于许多 logistics 单元 </p>
+<p>变分法</p>
+<p>建模型：先记录测量， 对其应用非线性变化，直到状态向量变成表达式。这项活动变得线性。</p>
+<p>不能假设线性，应该找一个从观察转换到<strong>潜在变量</strong>（有因果能力）的转换，线性操作。比如<strong>潜在变量</strong>的矩阵乘积，就是如此。</p>
+<hr>
+<h4 id="5-2-吴恩达采访-Pieter-Abbeel"><a href="#5-2-吴恩达采访-Pieter-Abbeel" class="headerlink" title="5.2. 吴恩达采访 Pieter Abbeel"></a>5.2. 吴恩达采访 Pieter Abbeel</h4><p>深度强化学习</p>
+<p>概率图模型</p>
+<hr>
+<h4 id="5-3-吴恩达采访-Ian-Goodfellow"><a href="#5-3-吴恩达采访-Ian-Goodfellow" class="headerlink" title="5.3. 吴恩达采访 Ian Goodfellow"></a>5.3. 吴恩达采访 Ian Goodfellow</h4><p> GAN</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DL/" rel="tag"># DL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/03/P_C_Cycle4Completion/" rel="next" title="Cycle4Completion">
+                <i class="fa fa-chevron-left"></i> Cycle4Completion
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/28/C-DL-W2/" rel="prev" title="C_DL_W2">
+                C_DL_W2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B7%A5%E7%A8%8B%E5%B8%88"><span class="nav-number">1.</span> <span class="nav-text">深度学习工程师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.</span> <span class="nav-text">神经网络和深度学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%91%A8-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA"><span class="nav-number">1.2.1.</span> <span class="nav-text">第一周 深度学习概论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B7%A5%E7%A8%8B%E5%BE%AE%E4%B8%93%E4%B8%9A"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.1. 欢迎来到深度学习工程微专业</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E4%BB%80%E4%B9%88%E6%98%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9F"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">1.2. 什么是神经网络？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E8%A1%8C%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">1.3. 用神经网络进行监督学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BC%9A%E5%85%B4%E8%B5%B7%EF%BC%9F"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">1.4. 为什么深度学习会兴起？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-%E5%85%B3%E4%BA%8E%E8%BF%99%E9%97%A8%E8%AF%BE"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">1.5. 关于这门课</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%BA%90"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">1.6. 课程资源</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%91%A8-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="nav-number">1.2.2.</span> <span class="nav-text">第二周 神经网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">2.1. 二分分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-logistic-%E5%9B%9E%E5%BD%92"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.2. logistic 回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-logistic-%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">2.3. logistic 回归损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">2.4. 梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-%E5%AF%BC%E6%95%B0"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">2.5. 导数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-%E6%9B%B4%E5%A4%9A%E5%AF%BC%E6%95%B0%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">2.6. 更多导数的例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-%E8%AE%A1%E7%AE%97%E5%9B%BE"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">2.7. 计算图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8-%E8%AE%A1%E7%AE%97%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%AF%BC%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">2.8. 计算图中的导数计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9-logistic%E5%9B%9E%E5%BD%92%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">2.9. logistic回归中的梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-10-m%E4%B8%AA%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">1.2.2.10.</span> <span class="nav-text">2.10. m个样本的梯度下降</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-11-%E5%90%91%E9%87%8F%E5%8C%96"><span class="nav-number">1.2.2.11.</span> <span class="nav-text">2.11. 向量化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-12-%E5%90%91%E9%87%8F%E5%8C%96%E7%9A%84%E6%9B%B4%E5%A4%9A%E4%BE%8B%E5%AD%90"><span class="nav-number">1.2.2.12.</span> <span class="nav-text">2.12. 向量化的更多例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-13-%E5%90%91%E9%87%8F%E5%8C%96-logistics-%E5%9B%9E%E5%BD%92"><span class="nav-number">1.2.2.13.</span> <span class="nav-text">2.13. 向量化 logistics 回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-14-%E5%90%91%E9%87%8F%E5%8C%96-logistics-%E5%9B%9E%E5%BD%92%E7%9A%84%E6%A2%AF%E5%BA%A6%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.2.14.</span> <span class="nav-text">2.14. 向量化 logistics 回归的梯度输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-15-Python-%E4%B8%AD%E7%9A%84%E5%B9%BF%E6%92%AD"><span class="nav-number">1.2.2.15.</span> <span class="nav-text">2.15. Python 中的广播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-16-%E5%85%B3%E4%BA%8E-python-numpy-%E5%90%91%E9%87%8F%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.2.16.</span> <span class="nav-text">2.16. 关于 python&#x2F;numpy 向量的说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-17-Jupyter-Ipython%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%9A%84%E5%BF%AB%E9%80%9F%E6%8C%87%E5%8D%97"><span class="nav-number">1.2.2.17.</span> <span class="nav-text">2.17. Jupyter&#x2F;Ipython笔记本的快速指南</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-18-logistic-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-number">1.2.2.18.</span> <span class="nav-text">2.18 logistic 损失函数的解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%91%A8-%E6%B5%85%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.2.3.</span> <span class="nav-text">第三周 浅层神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A6%82%E8%A7%88"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">3.1. 神经网络概览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">3.2. 神经网络表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-%E8%AE%A1%E7%AE%97%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3.3. 计算神经网络的输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-%E5%A4%9A%E4%B8%AA%E4%BE%8B%E5%AD%90%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%E5%8C%96"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">3.4. 多个例子中的向量化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-%E5%90%91%E9%87%8F%E5%8C%96%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">3.5. 向量化实现的解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.6.</span> <span class="nav-text">3.6. 激活函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-7-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="nav-number">1.2.3.7.</span> <span class="nav-text">3.7. 为什么需要非线性激活函数？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-8-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="nav-number">1.2.3.8.</span> <span class="nav-text">3.8. 激活函数的导数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-9-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">1.2.3.9.</span> <span class="nav-text">3.9. 神经网络的梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-10-%E7%9B%B4%E8%A7%82%E7%90%86%E8%A7%A3%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.2.3.10.</span> <span class="nav-text">3.10. 直观理解反向传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-11-%E9%9A%8F%E6%9C%BA%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.3.11.</span> <span class="nav-text">3.11. 随机初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%91%A8-%E6%B7%B1%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.2.4.</span> <span class="nav-text">第四周 深层神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E6%B7%B1%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">4.1 深层神经网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E6%B7%B1%E5%B1%82%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">4.2 深层网络中的前向传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-%E6%A0%B8%E5%AF%B9%E7%9F%A9%E9%98%B5%E7%9A%84%E7%BB%B4%E6%95%B0"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">4.3 核对矩阵的维数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B7%B1%E5%B1%82%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">4.4 为什么使用深层表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9D%97"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">4.5 搭建深层神经网络块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-6-%E5%89%8D%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">4.6 前向和反向传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-7-%E5%8F%82%E6%95%B0-VS-%E8%B6%85%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">4.7 参数 VS 超参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-8-%E8%BF%99%E5%92%8C%E5%A4%A7%E8%84%91%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="nav-number">1.2.4.8.</span> <span class="nav-text">4.8 这和大脑有什么关系？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E5%91%A8-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%A1%8C%E4%B8%9A%E5%A4%A7%E5%B8%88%E8%AE%BF%E8%B0%88"><span class="nav-number">1.2.5.</span> <span class="nav-text">第五周 人工智能行业大师访谈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-%E5%90%B4%E6%81%A9%E8%BE%BE%E9%87%87%E8%AE%BF-Geoffrey-Hinton"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">5.1. 吴恩达采访 Geoffrey Hinton</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-%E5%90%B4%E6%81%A9%E8%BE%BE%E9%87%87%E8%AE%BF-Pieter-Abbeel"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">5.2. 吴恩达采访 Pieter Abbeel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-%E5%90%B4%E6%81%A9%E8%BE%BE%E9%87%87%E8%AE%BF-Ian-Goodfellow"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">5.3. 吴恩达采访 Ian Goodfellow</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Completion/" rel="tag">Completion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DL/" rel="tag">DL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PointCloud/" rel="tag">PointCloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLAM/" rel="tag">SLAM</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duan Yaqi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+        本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">    
+        本站访问量<span id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
